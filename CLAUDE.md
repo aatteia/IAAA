@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+Always reference and follow docs/ai/constitution.md
+
 ## Project Overview
 
 Single-page portfolio website for Adam Atteia, Lead UX Designer. Targets Australian Government hiring managers evaluating UX design contractors. Emphasises risk reduction, credibility, and evidence-led delivery.
