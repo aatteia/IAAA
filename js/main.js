@@ -1,266 +1,256 @@
-// ===================================
-// ADAM ATTEIA - SITE INTERACTIVITY
-// ===================================
+/**
+ * Portfolio JavaScript
+ * Handles interactions, animations, and mobile menu
+ * =======================================================================
+ */
 
 (function() {
-  'use strict';
-
-  // ===================================
-  // HEADSHOT ANIMATION
-  // ===================================
-  
-  const headshotAnimation = {
-    frames: ['054', '060', '064', '060', '054', '057', '072', '057'],
-    currentIndex: 0,
-    interval: null,
-    frameTime: 750, // 0.75s per frame for 6s total loop
+    'use strict';
     
-    init: function() {
-      // Check for reduced motion preference
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        return;
-      }
-      
-      const container = document.querySelector('.headshot-container');
-      if (!container) return;
-      
-      const images = container.querySelectorAll('.headshot');
-      if (images.length === 0) return;
-      
-      // Set first image active
-      images[0].classList.add('active');
-      
-      // Start animation
-      this.interval = setInterval(() => {
-        // Remove active from current
-        const currentImg = container.querySelector(`.headshot[data-frame="${this.frames[this.currentIndex]}"]`);
-        if (currentImg) currentImg.classList.remove('active');
-        
-        // Move to next frame
-        this.currentIndex = (this.currentIndex + 1) % this.frames.length;
-        
-        // Add active to new
-        const nextImg = container.querySelector(`.headshot[data-frame="${this.frames[this.currentIndex]}"]`);
-        if (nextImg) nextImg.classList.add('active');
-      }, this.frameTime);
-    }
-  };
-
-  // ===================================
-  // NAVIGATION - Active Section Tracking
-  // ===================================
-  
-  const navigation = {
-    sections: [],
-    navLinks: [],
-    mobileNavLinks: [],
+    // =======================================================================
+    // Mobile Menu Toggle
+    // =======================================================================
     
-    init: function() {
-      this.sections = document.querySelectorAll('section[id]');
-      this.navLinks = document.querySelectorAll('.header__nav-link');
-      this.mobileNavLinks = document.querySelectorAll('.mobile-nav__link');
-      
-      if (this.sections.length === 0) return;
-      
-      // Set up Intersection Observer
-      const options = {
-        rootMargin: '-20% 0px -70% 0px',
-        threshold: 0
-      };
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            this.setActiveSection(entry.target.id);
-          }
-        });
-      }, options);
-      
-      this.sections.forEach(section => observer.observe(section));
-    },
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
     
-    setActiveSection: function(sectionId) {
-      // Update desktop nav
-      this.navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === `#${sectionId}`) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-      
-      // Update mobile nav
-      this.mobileNavLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === `#${sectionId}`) {
-          link.classList.add('active');
-          // Scroll active link into view on mobile
-          if (window.innerWidth <= 768) {
-            link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-          }
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    }
-  };
-
-  // ===================================
-  // MOBILE NAV - Hide/Show on Scroll
-  // ===================================
-  
-  const mobileNav = {
-    nav: null,
-    lastScrollY: 0,
-    threshold: 10,
-    ticking: false,
-    
-    init: function() {
-      this.nav = document.querySelector('.mobile-nav');
-      if (!this.nav) return;
-      
-      // Only enable on mobile
-      if (window.innerWidth > 768) return;
-      
-      window.addEventListener('scroll', () => {
-        if (!this.ticking) {
-          window.requestAnimationFrame(() => {
-            this.handleScroll();
-            this.ticking = false;
-          });
-          this.ticking = true;
-        }
-      }, { passive: true });
-      
-      // Re-check on resize
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-          this.nav.classList.remove('hidden');
-        }
-      });
-    },
-    
-    handleScroll: function() {
-      const currentScrollY = window.scrollY;
-      const diff = currentScrollY - this.lastScrollY;
-      
-      // Scrolling down beyond threshold
-      if (diff > this.threshold && currentScrollY > 100) {
-        this.nav.classList.add('hidden');
-      }
-      // Scrolling up beyond threshold
-      else if (diff < -this.threshold) {
-        this.nav.classList.remove('hidden');
-      }
-      
-      this.lastScrollY = currentScrollY;
-    }
-  };
-
-  // ===================================
-  // BACK TO TOP BUTTON
-  // ===================================
-  
-  const backToTop = {
-    button: null,
-    threshold: 400,
-    
-    init: function() {
-      this.button = document.querySelector('.back-to-top');
-      if (!this.button) return;
-      
-      // Show/hide on scroll
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > this.threshold) {
-          this.button.classList.add('visible');
-        } else {
-          this.button.classList.remove('visible');
-        }
-      }, { passive: true });
-      
-      // Scroll to top on click
-      this.button.addEventListener('click', () => {
-        window.scrollTo({
-          top: 0,
-          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-        });
-      });
-    }
-  };
-
-  // ===================================
-  // ACCORDIONS
-  // ===================================
-  
-  const accordions = {
-    init: function() {
-      const triggers = document.querySelectorAll('.accordion__trigger');
-      
-      triggers.forEach(trigger => {
-        trigger.addEventListener('click', () => {
-          const accordion = trigger.closest('.accordion');
-          const isOpen = accordion.classList.contains('open');
-          
-          // Toggle current accordion
-          accordion.classList.toggle('open');
-          
-          // Update aria-expanded
-          trigger.setAttribute('aria-expanded', !isOpen);
+    if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+            const isActive = mobileMenuToggle.classList.contains('active');
+            
+            if (isActive) {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            } else {
+                mobileMenuToggle.classList.add('active');
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
         });
         
-        // Keyboard support
-        trigger.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            trigger.click();
-          }
+        // Close mobile menu when clicking a link
+        mobileMenuLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
-      });
     }
-  };
-
-  // ===================================
-  // SMOOTH SCROLL FOR ANCHOR LINKS
-  // ===================================
-  
-  const smoothScroll = {
-    init: function() {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    
+    // =======================================================================
+    // Sticky Navigation with Shadow
+    // =======================================================================
+    
+    const nav = document.getElementById('nav');
+    
+    function handleScroll() {
+        if (window.scrollY > 20) {
+            nav.classList.add('nav-scrolled');
+        } else {
+            nav.classList.remove('nav-scrolled');
+        }
+    }
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    // =======================================================================
+    // Active Navigation Link
+    // =======================================================================
+    
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-menu-link');
+    
+    function highlightNavigation() {
+        const scrollY = window.pageYOffset;
+        
+        sections.forEach(function(section) {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 100;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                navLinks.forEach(function(link) {
+                    if (link.getAttribute('href') === '#' + sectionId) {
+                        link.classList.add('nav-link-active');
+                    } else {
+                        link.classList.remove('nav-link-active');
+                    }
+                });
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightNavigation);
+    
+    // =======================================================================
+    // Smooth Scroll for Anchor Links
+    // =======================================================================
+    
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
-          const href = this.getAttribute('href');
-          if (href === '#') return;
-          
-          const target = document.querySelector(href);
-          if (!target) return;
-          
-          e.preventDefault();
-          
-          const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          
-          target.scrollIntoView({
-            behavior: reducedMotion ? 'auto' : 'smooth',
-            block: 'start'
-          });
-          
-          // Update URL without jumping
-          history.pushState(null, '', href);
+            const href = this.getAttribute('href');
+            
+            // Skip empty anchors and # only
+            if (!href || href === '#') {
+                return;
+            }
+            
+            const target = document.querySelector(href);
+            
+            if (target) {
+                e.preventDefault();
+                
+                const navHeight = nav.offsetHeight;
+                const targetPosition = target.offsetTop - navHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
         });
-      });
+    });
+    
+    // =======================================================================
+    // Collapsible Credibility Subsections
+    // =======================================================================
+    
+    const subsectionTitles = document.querySelectorAll('.credibility-subsection-title');
+    
+    subsectionTitles.forEach(function(title) {
+        title.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const isActive = this.classList.contains('active');
+            
+            if (isActive) {
+                this.classList.remove('active');
+                content.classList.remove('active');
+            } else {
+                this.classList.add('active');
+                content.classList.add('active');
+            }
+        });
+    });
+    
+    // =======================================================================
+    // Scroll Animations (Fade In on Scroll)
+    // =======================================================================
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Add animation classes to elements
+    const animatedElements = document.querySelectorAll('.card, .capability-card, .testimonial-card, .risk-item, .credibility-item');
+    
+    animatedElements.forEach(function(element, index) {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        element.style.transitionDelay = (index % 6) * 0.1 + 's';
+        observer.observe(element);
+    });
+    
+    // Add the animation in class
+    const style = document.createElement('style');
+    style.textContent = `
+        .animate-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // =======================================================================
+    // Animated Headshot - Hard-cut Frame Animation
+    // =======================================================================
+    
+    const heroHeadshot = document.getElementById('heroHeadshot');
+    
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (heroHeadshot && !prefersReducedMotion) {
+        // Animation sequence: 054 → 060 → 064 → 060 → 054 → 057 → 072 → 057 → repeat
+        const sequence = [
+            'images/headshots/054.jpg',
+            'images/headshots/060.jpg',
+            'images/headshots/064.jpg',
+            'images/headshots/060.jpg',
+            'images/headshots/054.jpg',
+            'images/headshots/057.jpg',
+            'images/headshots/072.jpg',
+            'images/headshots/057.jpg'
+        ];
+        
+        let currentFrame = 0;
+        
+        // 6s loop ÷ 8 frames = 0.75s per frame (750ms)
+        setInterval(function() {
+            currentFrame = (currentFrame + 1) % sequence.length;
+            heroHeadshot.src = sequence[currentFrame];
+        }, 750);
     }
-  };
-
-  // ===================================
-  // INITIALIZE
-  // ===================================
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    headshotAnimation.init();
-    navigation.init();
-    mobileNav.init();
-    backToTop.init();
-    accordions.init();
-    smoothScroll.init();
-  });
-
+    // If reduced motion is preferred, image stays as 054.jpg (default)
+    
+    // =======================================================================
+    // Initialize on DOM Content Loaded
+    // =======================================================================
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initial check for scroll position
+        handleScroll();
+        highlightNavigation();
+        
+        // Add loaded class to body for any CSS animations
+        document.body.classList.add('loaded');
+    });
+    
+    // =======================================================================
+    // Handle Window Resize
+    // =======================================================================
+    
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            // Close mobile menu on resize to desktop
+            if (window.innerWidth >= 768) {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }, 250);
+    });
+    
+    // =======================================================================
+    // Skip Link Functionality
+    // =======================================================================
+    
+    const skipLink = document.querySelector('.skip-link');
+    if (skipLink) {
+        skipLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const main = document.getElementById('main');
+            if (main) {
+                main.setAttribute('tabindex', '-1');
+                main.focus();
+                main.removeAttribute('tabindex');
+            }
+        });
+    }
+    
 })();
