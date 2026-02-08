@@ -1,97 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Privacy policy for Adam Atteia's website.">
-  <meta name="robots" content="noindex">
-  
-  <title>Privacy | Adam Atteia</title>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>A</text></svg>">
-  
-  <style>
-    .privacy-page {
-      padding-top: calc(var(--header-height) + var(--section-padding));
-      padding-bottom: var(--section-padding);
-      min-height: 100vh;
-    }
-    
-    .privacy-page h1 {
-      margin-bottom: 2rem;
-    }
-    
-    .privacy-page p {
-      max-width: 600px;
-    }
-    
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 2rem;
-      font-weight: 500;
-      color: var(--color-accent);
-      text-decoration: none;
-    }
-    
-    .back-link:hover {
-      text-decoration: underline;
-    }
-    
-    .back-link:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 4px;
-      border-radius: 2px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy policy for Adam Atteia's website.">
+    <meta name="robots" content="noindex">
+
+    <title>Privacy | Adam Atteia</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <style>
+        /* Privacy page specific styles */
+        .privacy-page {
+            padding: var(--space-7xl) 0;
+            min-height: 100vh;
+        }
+
+        .privacy-page h1 {
+            margin-bottom: var(--space-2xl);
+        }
+
+        .privacy-page p {
+            max-width: 600px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-top: var(--space-2xl);
+            font-weight: var(--font-weight-medium);
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .back-link:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <a href="index.html" class="header__logo">Adam Atteia</a>
-    </div>
-  </header>
 
-  <main class="privacy-page">
-    <div class="container">
-      <h1>Privacy</h1>
-      
-      <p>This website does not use analytics, tracking, or cookies. No personal data is collected or stored.</p>
-      
-      <p>If you have any questions about this policy, please contact me at <a href="mailto:adam.atteia@gmail.com" class="inline-link">adam.atteia@gmail.com</a>.</p>
-      
-      <a href="index.html" class="back-link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="m15 18-6-6 6-6"/>
-        </svg>
-        Back to home
-      </a>
-    </div>
-  </main>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">Adam Atteia</a>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__inner">
-        <span>© Adam Atteia <span id="year"></span></span>
-        <a href="privacy.html" class="footer__link">Privacy</a>
-      </div>
-    </div>
-  </footer>
+    <main class="privacy-page">
+        <div class="container">
+            <h1>Privacy</h1>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+            <p>This website does not use analytics, tracking, or cookies. No personal data is collected or stored.</p>
+
+            <p>If you have any questions about this policy, please contact me at <a href="mailto:adam.atteia@gmail.com">adam.atteia@gmail.com</a>.</p>
+
+            <a href="index.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 18-6-6 6-6"/>
+                </svg>
+                Back to home
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <strong>Adam Atteia</strong>
+                </div>
+                <nav>
+                    <ul class="footer-nav">
+                        <li><a href="privacy.html" class="footer-link">Privacy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; Adam Atteia</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
