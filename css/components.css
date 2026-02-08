@@ -283,7 +283,7 @@
 }
 
 .testimonial-quote {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-xl);
   line-height: var(--line-height-relaxed);
   color: var(--color-gray-900);
   margin-bottom: var(--space-xl);
@@ -307,14 +307,25 @@
   gap: var(--space-md);
 }
 
+.testimonial-author > div {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+}
+
 .testimonial-author-name {
   font-weight: var(--font-weight-semibold);
-  color: var(--color-black);
-  margin-bottom: 2px;
+  color: var(--color-primary-dark);
+}
+
+.testimonial-author-name::after {
+  content: ' -';
+  color: var(--color-gray-700);
+  font-weight: var(--font-weight-regular);
 }
 
 .testimonial-author-title {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   color: var(--color-gray-700);
 }
 
