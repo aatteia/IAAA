@@ -16,11 +16,12 @@ The AI agent coding constitution defines rules and behaviours for Claude when wo
 
 ## Usage
 
-When starting a new conversation with Claude about this project:
+Claude Code reads `CLAUDE.md` automatically at the start of each session, which references this constitution. No manual context-sharing is needed.
 
-1. Share the relevant context (what you're trying to do)
-2. Reference the constitution if needed: "Please follow the constitution in docs/ai/"
-3. For significant work, ask Claude to create a plan in docs/plans/
+When starting work:
+
+1. Describe what you're trying to do
+2. For significant work, ask Claude to create a plan in docs/plans/
 
 ## Updating the Constitution
 
