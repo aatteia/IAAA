@@ -284,7 +284,9 @@
 
 .testimonial-quote {
   font-size: var(--font-size-xl);
-  line-height: var(--line-height-relaxed);
+  line-height: 1.4;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.02em;
   color: var(--color-gray-900);
   margin-bottom: var(--space-xl);
   position: relative;
