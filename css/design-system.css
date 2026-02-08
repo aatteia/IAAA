@@ -526,6 +526,7 @@ a:focus {
   top: 0;
   z-index: var(--z-sticky);
   background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-200);
   transition: box-shadow var(--transition-base);
 }
 
