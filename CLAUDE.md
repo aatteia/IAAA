@@ -1,6 +1,40 @@
 # CLAUDE.md
 
-Always reference and follow docs/ai/constitution.md
+The full governance document is `docs/ai/constitution.md`. Read it at the start of every session. The rules below are extracted from the constitution for immediate enforcement.
+
+## Mandatory Workflow
+
+These rules apply to every response and every change. No exceptions.
+
+### Before every change
+1. Read `docs/ai/constitution.md` if not yet read this session
+2. Read every file you intend to modify before editing it
+3. For significant changes (3+ files, new features, structural changes): present a plan listing all affected files and get approval before editing
+4. Use CSS custom properties from `css/design-system.css` — never hardcode colours, spacing, or typography
+
+### Before every commit
+5. Stage specific files only (never `git add .` or `git add -A`)
+6. Confirm with Adam before pushing to remote
+7. For multi-file commits: list all files and recommend whether to commit together or separately
+
+### Before every response
+8. Run the preflight checklist (constitution Section VIII)
+9. End every response with the Summary format below — no exceptions, even for short responses
+
+### Preflight checklist
+1. Is the task confirmed and unambiguous?
+2. Has existing code been examined first?
+3. Does the change follow the design system?
+4. Is the change minimal and focused?
+5. Are all assumptions stated explicitly?
+6. Is incomplete work clearly marked?
+7. Is the HTML semantic and accessible?
+8. Are CSS values using custom properties where appropriate?
+9. Will this work on GitHub Pages (static only)?
+10. Is there a clear path to verify this works?
+11. Is the summary complete?
+
+---
 
 ## Project Overview
 
@@ -104,12 +138,11 @@ git push origin main
 
 ## Verification
 
-No automated test framework. For every change:
-1. Verify HTML is valid and semantic
-2. Describe expected visual outcomes
-3. Recommend manual testing steps (local + production)
-4. Check accessibility (keyboard nav, contrast, screen reader)
-5. Confirm it works on GitHub Pages (static only)
+No automated test framework. After every change, include in your response:
+1. Expected visual/behavioural outcome of the change
+2. Specific manual testing steps Adam should perform (local + production)
+3. Accessibility checks where relevant (keyboard nav, contrast, screen reader)
+4. Confirmation that it works on GitHub Pages (static only, no server-side)
 
 ## Response Format
 
