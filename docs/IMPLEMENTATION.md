@@ -63,7 +63,7 @@ git commit -m "Apply HireUp-inspired design system"
 git push origin main
 ```
 
-Your site should be live at `https://aatteia.github.io/IAAA/`
+Your site should be live at `https://adamatteia.com/`
 
 ---
 

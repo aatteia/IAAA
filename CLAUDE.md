@@ -6,7 +6,7 @@ Always reference and follow docs/ai/constitution.md
 
 Single-page portfolio website for Adam Atteia, Lead UX Designer. Targets Australian Government hiring managers evaluating UX design contractors. Emphasises risk reduction, credibility, and evidence-led delivery.
 
-**Live site:** GitHub Pages (static hosting, no server-side processing)
+**Live site:** [adamatteia.com](https://adamatteia.com/) — GitHub Pages with custom domain (static hosting, no server-side processing)
 
 ## Tech Stack
 
