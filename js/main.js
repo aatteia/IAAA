@@ -155,12 +155,23 @@
     
     // Add animation classes to elements
     const animatedElements = document.querySelectorAll('.card, .capability-card, .testimonial-card, .risk-item, .credibility-item');
-    
+
     animatedElements.forEach(function(element, index) {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
         element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         element.style.transitionDelay = (index % 6) * 0.1 + 's';
+        observer.observe(element);
+    });
+
+    // Sequential animation for client logos (top-left to bottom-right)
+    var logoElements = document.querySelectorAll('.client-logo-wrapper');
+
+    logoElements.forEach(function(element, index) {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        element.style.transitionDelay = index * 0.08 + 's';
         observer.observe(element);
     });
     
