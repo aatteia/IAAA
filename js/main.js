@@ -122,14 +122,16 @@
     
     subsectionTitles.forEach(function(title) {
         title.addEventListener('click', function() {
-            const content = this.nextElementSibling;
-            const isActive = this.classList.contains('active');
-            
+            var content = this.nextElementSibling;
+            var isActive = this.classList.contains('active');
+
             if (isActive) {
                 this.classList.remove('active');
+                this.setAttribute('aria-expanded', 'false');
                 content.classList.remove('active');
             } else {
                 this.classList.add('active');
+                this.setAttribute('aria-expanded', 'true');
                 content.classList.add('active');
             }
         });
@@ -195,24 +197,32 @@
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     if (heroHeadshot && !prefersReducedMotion) {
+        // Detect WebP support via the <picture> source element
+        var sourceEl = heroHeadshot.parentElement.querySelector('source[type="image/webp"]');
+        var useWebP = sourceEl !== null;
+        var ext = useWebP ? '.webp' : '.jpg';
+
         // Animation sequence: 054 → 060 → 064 → 060 → 054 → 057 → 072 → 057 → repeat
-        const sequence = [
-            'images/headshots/054.jpg',
-            'images/headshots/060.jpg',
-            'images/headshots/064.jpg',
-            'images/headshots/060.jpg',
-            'images/headshots/054.jpg',
-            'images/headshots/057.jpg',
-            'images/headshots/072.jpg',
-            'images/headshots/057.jpg'
+        var sequence = [
+            'images/headshots/054' + ext,
+            'images/headshots/060' + ext,
+            'images/headshots/064' + ext,
+            'images/headshots/060' + ext,
+            'images/headshots/054' + ext,
+            'images/headshots/057' + ext,
+            'images/headshots/072' + ext,
+            'images/headshots/057' + ext
         ];
-        
-        let currentFrame = 0;
-        
+
+        var currentFrame = 0;
+
         // 6s loop ÷ 8 frames = 0.75s per frame (750ms)
         setInterval(function() {
             currentFrame = (currentFrame + 1) % sequence.length;
             heroHeadshot.src = sequence[currentFrame];
+            if (sourceEl) {
+                sourceEl.srcset = sequence[currentFrame];
+            }
         }, 750);
     }
     // If reduced motion is preferred, image stays as 054.jpg (default)

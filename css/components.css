@@ -232,10 +232,16 @@
   gap: var(--space-sm);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-semibold);
+  font-family: inherit;
   color: var(--color-black);
   margin-bottom: var(--space-md);
   cursor: pointer;
   user-select: none;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  width: 100%;
 }
 
 .credibility-toggle-icon {
@@ -270,6 +276,7 @@
 }
 
 .testimonial-card {
+  margin: 0;
   background: var(--color-white);
   border-radius: var(--radius-xl);
   padding: var(--space-2xl);
@@ -294,12 +301,6 @@
 }
 
 .testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.testimonial-author > div {
   display: flex;
   align-items: baseline;
   gap: var(--space-xs);
@@ -459,7 +460,7 @@ a.footer-link:hover {
 }
 
 .footer-link-current {
-  color: var(--color-gray-400);
+  color: var(--color-gray-300);
   cursor: default;
 }
 

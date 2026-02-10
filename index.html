@@ -41,7 +41,7 @@
     <nav class="nav" id="nav">
         <div class="container">
             <div class="nav-container">
-                <a href="#" class="nav-logo">Adam Atteia</a>
+                <a href="index.html" class="nav-logo">Adam Atteia</a>
                 
                 <ul class="nav-menu">
                     <li><a href="#risk" class="nav-link">Reduce risk</a></li>
@@ -82,7 +82,10 @@
         <section class="portfolio-hero">
             <div class="container">
                 <div class="hero-headshot-wrapper">
-                    <img src="images/headshots/054.jpg" alt="Adam Atteia" class="hero-headshot-animated" id="heroHeadshot">
+                    <picture>
+                        <source srcset="images/headshots/054.webp" type="image/webp">
+                        <img src="images/headshots/054.jpg" alt="Adam Atteia" class="hero-headshot-animated" id="heroHeadshot">
+                    </picture>
                 </div>
                 
                 <div class="hero-content">
@@ -238,12 +241,12 @@
                 </ul>
                 
                 <div class="credibility-subsection">
-                    <div class="credibility-subsection-title">
+                    <button class="credibility-subsection-title" aria-expanded="false">
                         <span>Security clearances and eligibility</span>
-                        <svg class="credibility-toggle-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="credibility-toggle-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
-                    </div>
+                    </button>
                     <div class="credibility-subsection-content">
                         <ul class="credibility-list">
                             <li class="credibility-item">
@@ -259,12 +262,12 @@
                 </div>
                 
                 <div class="credibility-subsection">
-                    <div class="credibility-subsection-title">
+                    <button class="credibility-subsection-title" aria-expanded="false">
                         <span>Qualifications</span>
-                        <svg class="credibility-toggle-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="credibility-toggle-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
-                    </div>
+                    </button>
                     <div class="credibility-subsection-content">
                         <ul class="credibility-list">
                             <li class="credibility-item">
@@ -292,12 +295,12 @@
                 </div>
                 
                 <div class="credibility-subsection">
-                    <div class="credibility-subsection-title">
+                    <button class="credibility-subsection-title" aria-expanded="false">
                         <span>Professional development</span>
-                        <svg class="credibility-toggle-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="credibility-toggle-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
-                    </div>
+                    </button>
                     <div class="credibility-subsection-content">
                         <ul class="credibility-list">
                             <li class="credibility-item">
@@ -336,65 +339,53 @@
                 <h2 class="text-center mb-3xl">Testimonials</h2>
                 
                 <div class="testimonials-grid">
-                    <div class="testimonial-card">
+                    <figure class="testimonial-card">
                         <blockquote class="testimonial-quote">Adam is highly professional, attentive to nuance, and asks the right questions to understand the business context and achieve UX outcomes.</blockquote>
-                        <div class="testimonial-author">
-                            <div>
-                                <div class="testimonial-author-name">Elisa</div>
-                                <div class="testimonial-author-title">Director, Customer Experience</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
+                        <figcaption class="testimonial-author">
+                            <span class="testimonial-author-name">Elisa</span>
+                            <span class="testimonial-author-title">Director, Customer Experience</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="testimonial-card">
                         <blockquote class="testimonial-quote">One of Adam's greatest strengths is his expertise in experience design and his understanding of the end-to-end design process.</blockquote>
-                        <div class="testimonial-author">
-                            <div>
-                                <div class="testimonial-author-name">Tim</div>
-                                <div class="testimonial-author-title">Experience Strategy Consultant</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
+                        <figcaption class="testimonial-author">
+                            <span class="testimonial-author-name">Tim</span>
+                            <span class="testimonial-author-title">Experience Strategy Consultant</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="testimonial-card">
                         <blockquote class="testimonial-quote">Adam's ability to clearly articulate requirements, and to seek clarification from the client ahead of the build sprint, was crucial.</blockquote>
-                        <div class="testimonial-author">
-                            <div>
-                                <div class="testimonial-author-name">Mubin</div>
-                                <div class="testimonial-author-title">Government Consultant</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
+                        <figcaption class="testimonial-author">
+                            <span class="testimonial-author-name">Mubin</span>
+                            <span class="testimonial-author-title">Government Consultant</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="testimonial-card">
                         <blockquote class="testimonial-quote">Adam is a true UX professional. He strikes the right balance between building empathy with target users and creatively designing experiences to meet their needs — often in delightful ways.</blockquote>
-                        <div class="testimonial-author">
-                            <div>
-                                <div class="testimonial-author-name">Lachlan</div>
-                                <div class="testimonial-author-title">User Experience Lead</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
+                        <figcaption class="testimonial-author">
+                            <span class="testimonial-author-name">Lachlan</span>
+                            <span class="testimonial-author-title">User Experience Lead</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="testimonial-card">
                         <blockquote class="testimonial-quote">Adam is a confident communicator who can explain and unpack complex ideas and designs for any audience.</blockquote>
-                        <div class="testimonial-author">
-                            <div>
-                                <div class="testimonial-author-name">Jack</div>
-                                <div class="testimonial-author-title">Government Director</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
+                        <figcaption class="testimonial-author">
+                            <span class="testimonial-author-name">Jack</span>
+                            <span class="testimonial-author-title">Government Director</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="testimonial-card">
                         <blockquote class="testimonial-quote">Adam has excellent attention to detail, and works collaboratively with clients to produce outcomes that suit their needs.</blockquote>
-                        <div class="testimonial-author">
-                            <div>
-                                <div class="testimonial-author-name">Rebecca</div>
-                                <div class="testimonial-author-title">Government Director</div>
-                            </div>
-                        </div>
-                    </div>
+                        <figcaption class="testimonial-author">
+                            <span class="testimonial-author-name">Rebecca</span>
+                            <span class="testimonial-author-title">Government Director</span>
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
