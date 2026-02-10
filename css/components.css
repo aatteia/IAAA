@@ -454,8 +454,13 @@
   transition: color var(--transition-base);
 }
 
-.footer-link:hover {
+a.footer-link:hover {
   color: var(--color-primary);
+}
+
+.footer-link-current {
+  color: var(--color-gray-400);
+  cursor: default;
 }
 
 .footer-bottom {
