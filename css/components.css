@@ -288,19 +288,9 @@
   font-weight: var(--font-weight-medium);
   letter-spacing: -0.02em;
   color: var(--color-gray-900);
-  margin-bottom: var(--space-xl);
-  position: relative;
-}
-
-.testimonial-quote::before {
-  content: '"';
-  font-size: 48px;
-  color: var(--color-primary);
-  opacity: 0.2;
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  font-family: Georgia, serif;
+  margin: 0 0 var(--space-xl) 0;
+  padding-left: var(--space-xl);
+  border-left: 3px solid var(--color-primary);
 }
 
 .testimonial-author {
