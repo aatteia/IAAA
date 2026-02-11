@@ -33,16 +33,6 @@
   --color-success: #28A745;
   --color-warning: #FFC107;
   
-  /* Colors - Badge/Tag Variations */
-  --color-badge-blue: #E3F2FD;
-  --color-badge-purple: #F3E5F5;
-  --color-badge-orange: #FFF3E0;
-  --color-badge-teal: #E0F2F1;
-  --color-badge-text-blue: #1976D2;
-  --color-badge-text-purple: #7B1FA2;
-  --color-badge-text-orange: #E65100;
-  --color-badge-text-teal: #00695C;
-  
   /* Colors - Overlays */
   --color-overlay-white-10: rgba(255, 255, 255, 0.1);
   --color-overlay-white-20: rgba(255, 255, 255, 0.2);
@@ -83,7 +73,6 @@
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
   
   /* Spacing Scale */
   --space-0: 0;
@@ -446,47 +435,6 @@ a:focus {
 
 .card-no-border:hover {
   box-shadow: var(--shadow-xl);
-}
-
-/* Badges */
-.badge {
-  display: inline-block;
-  padding: var(--space-2xs) var(--space-sm);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-normal);
-  border-radius: var(--radius-full);
-  white-space: nowrap;
-}
-
-.badge-blue {
-  background-color: var(--color-badge-blue);
-  color: var(--color-badge-text-blue);
-}
-
-.badge-purple {
-  background-color: var(--color-badge-purple);
-  color: var(--color-badge-text-purple);
-}
-
-.badge-orange {
-  background-color: var(--color-badge-orange);
-  color: var(--color-badge-text-orange);
-}
-
-.badge-teal {
-  background-color: var(--color-badge-teal);
-  color: var(--color-badge-text-teal);
-}
-
-.badge-primary {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-
-.badge-gray {
-  background-color: var(--color-gray-100);
-  color: var(--color-gray-700);
 }
 
 /* Forms */

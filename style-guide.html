@@ -11,14 +11,17 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/design-system.css">
     <link rel="stylesheet" href="css/components.css">
 
     <style>
-        /* Style guide page specific styles */
+        /* ================================================================
+           PAGE LAYOUT
+           Base layout for the style guide page
+           ================================================================ */
         .sg-page {
             padding: var(--space-5xl) 0;
         }
@@ -32,7 +35,10 @@
             color: var(--color-gray-700);
         }
 
-        /* Section styles */
+        /* ================================================================
+           SECTIONS & SUBSECTIONS
+           Vertical rhythm and heading styles for content sections
+           ================================================================ */
         .sg-section {
             margin-bottom: var(--space-6xl);
             scroll-margin-top: 80px;
@@ -65,7 +71,10 @@
             margin-bottom: var(--space-xs);
         }
 
-        /* Color swatches */
+        /* ================================================================
+           COLOR SWATCHES
+           Grid of colour samples with name, hex value, and variable
+           ================================================================ */
         .sg-color-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -107,7 +116,10 @@
             margin-top: var(--space-2xs);
         }
 
-        /* Typography samples */
+        /* ================================================================
+           TYPOGRAPHY SAMPLES
+           Heading and body text showcases with metadata labels
+           ================================================================ */
         .sg-type-sample {
             margin-bottom: var(--space-2xl);
         }
@@ -128,7 +140,10 @@
             margin-bottom: 0;
         }
 
-        /* Component showcase */
+        /* ================================================================
+           COMPONENT SHOWCASE
+           Layouts for displaying buttons, cards, and form elements
+           ================================================================ */
         .sg-component-row {
             display: flex;
             flex-wrap: wrap;
@@ -143,7 +158,10 @@
             gap: var(--space-xl);
         }
 
-        /* Spacing visualisation */
+        /* ================================================================
+           SPACING VISUALISATION
+           Horizontal bars and labels for the spacing scale
+           ================================================================ */
         .sg-spacing-list {
             display: flex;
             flex-direction: column;
@@ -172,7 +190,10 @@
             min-width: 180px;
         }
 
-        /* Shadow showcase */
+        /* ================================================================
+           SHADOW SHOWCASE
+           Grid of elevated boxes demonstrating shadow tokens
+           ================================================================ */
         .sg-shadow-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -191,7 +212,10 @@
             color: var(--color-gray-500);
         }
 
-        /* Radius showcase */
+        /* ================================================================
+           RADIUS SHOWCASE
+           Visual boxes demonstrating each border-radius token
+           ================================================================ */
         .sg-radius-grid {
             display: flex;
             flex-wrap: wrap;
@@ -217,14 +241,79 @@
             color: var(--color-gray-500);
         }
 
-        /* Form showcase */
+        /* ================================================================
+           FORM SHOWCASE
+           Grid layout for form element samples
+           ================================================================ */
         .sg-form-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: var(--space-xl);
         }
 
-        /* Sidebar navigation */
+        /* ================================================================
+           USAGE NOTES & GUIDANCE
+           Contextual hints, "avoid" warnings, and "used in" references
+           ================================================================ */
+        .sg-usage-note {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-700);
+            line-height: var(--line-height-relaxed);
+            margin-bottom: var(--space-xl);
+            padding: var(--space-md) var(--space-lg);
+            background-color: var(--color-gray-50);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--color-primary);
+        }
+
+        .sg-avoid-note {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-900);
+            line-height: var(--line-height-relaxed);
+            margin-bottom: var(--space-xl);
+            padding: var(--space-md) var(--space-lg);
+            background-color: var(--color-error-bg);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--color-error);
+        }
+
+        .sg-used-in {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-700);
+            margin-top: var(--space-lg);
+        }
+
+        .sg-used-in strong {
+            color: var(--color-gray-900);
+        }
+
+        /* ================================================================
+           COLOUR PAIRINGS
+           Side-by-side foreground/background contrast samples
+           ================================================================ */
+        .sg-pairing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .sg-pairing-sample {
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-gray-200);
+        }
+
+        .sg-pairing-label {
+            font-size: var(--font-size-xs);
+            font-family: monospace;
+            margin-top: var(--space-sm);
+            opacity: 0.8;
+        }
+
+        /* ================================================================
+           SIDEBAR NAVIGATION
+           Sticky sidebar with grouped links to style and component sections
+           ================================================================ */
         .sg-layout {
             display: grid;
             grid-template-columns: 200px 1fr;
@@ -277,7 +366,11 @@
             min-width: 0;
         }
 
-        /* Responsive */
+        /* ================================================================
+           RESPONSIVE
+           Sidebar collapses to horizontal links on tablet; colour grid
+           and spacing labels adapt on mobile
+           ================================================================ */
         @media (max-width: 991px) {
             .sg-layout {
                 grid-template-columns: 1fr;
@@ -359,14 +452,15 @@
                             <li><a href="#line-height" class="sg-sidebar-link">Line Height</a></li>
                             <li><a href="#letter-spacing" class="sg-sidebar-link">Letter Spacing</a></li>
                             <li><a href="#transitions" class="sg-sidebar-link">Transitions</a></li>
+                            <li><a href="#breakpoints" class="sg-sidebar-link">Breakpoints</a></li>
                             <li><a href="#containers" class="sg-sidebar-link">Containers</a></li>
                         </ul>
                     </div>
                     <div class="sg-sidebar-group">
                         <div class="sg-sidebar-heading">Components</div>
                         <ul class="sg-sidebar-list">
+                            <li><a href="#navigation" class="sg-sidebar-link">Navigation</a></li>
                             <li><a href="#buttons" class="sg-sidebar-link">Buttons</a></li>
-                            <li><a href="#badges" class="sg-sidebar-link">Badges</a></li>
                             <li><a href="#cards" class="sg-sidebar-link">Cards</a></li>
                             <li><a href="#forms" class="sg-sidebar-link">Forms</a></li>
                             <li><a href="#blockquotes" class="sg-sidebar-link">Blockquotes</a></li>
@@ -383,7 +477,7 @@
                 <div class="sg-content">
 
             <!-- ============================================================
-                 COLORS
+                 STYLES — COLORS
                  ============================================================ -->
             <section id="colors" class="sg-section">
                 <h2 class="sg-section-title">Colors</h2>
@@ -584,48 +678,44 @@
                     </div>
                 </div>
 
-                <!-- Badge Colors -->
+                <!-- Colour Pairings — Rec #5 -->
                 <div class="sg-subsection">
-                    <h3 class="sg-subsection-title">Badge / Tag</h3>
-                    <div class="sg-color-grid">
-                        <div class="sg-color-swatch">
-                            <div class="sg-color-block" style="background-color: #E3F2FD;"></div>
-                            <div class="sg-color-info">
-                                <div class="sg-color-name">Blue</div>
-                                <div class="sg-color-value">#E3F2FD / #1976D2</div>
-                                <span class="sg-color-var">--color-badge-blue</span>
-                            </div>
+                    <h3 class="sg-subsection-title">Common Colour Pairings</h3>
+                    <p class="sg-usage-note">These are the tested foreground/background combinations used across the site. All pairings meet WCAG AA contrast requirements (4.5:1 for normal text, 3:1 for large text).</p>
+                    <div class="sg-pairing-grid">
+                        <div class="sg-pairing-sample" style="background-color: var(--color-white); color: var(--color-gray-900);">
+                            <p style="margin: 0; font-weight: var(--font-weight-medium);">Body text on white</p>
+                            <p class="sg-pairing-label" style="color: var(--color-gray-500);">--color-gray-900 on --color-white &mdash; 12.6:1</p>
                         </div>
-                        <div class="sg-color-swatch">
-                            <div class="sg-color-block" style="background-color: #F3E5F5;"></div>
-                            <div class="sg-color-info">
-                                <div class="sg-color-name">Purple</div>
-                                <div class="sg-color-value">#F3E5F5 / #7B1FA2</div>
-                                <span class="sg-color-var">--color-badge-purple</span>
-                            </div>
+                        <div class="sg-pairing-sample" style="background-color: var(--color-white); color: var(--color-gray-700);">
+                            <p style="margin: 0; font-weight: var(--font-weight-medium);">Secondary text on white</p>
+                            <p class="sg-pairing-label" style="color: var(--color-gray-500);">--color-gray-700 on --color-white &mdash; 5.9:1</p>
                         </div>
-                        <div class="sg-color-swatch">
-                            <div class="sg-color-block" style="background-color: #FFF3E0;"></div>
-                            <div class="sg-color-info">
-                                <div class="sg-color-name">Orange</div>
-                                <div class="sg-color-value">#FFF3E0 / #E65100</div>
-                                <span class="sg-color-var">--color-badge-orange</span>
-                            </div>
+                        <div class="sg-pairing-sample" style="background-color: var(--color-primary); color: var(--color-white);">
+                            <p style="margin: 0; font-weight: var(--font-weight-medium);">White on primary</p>
+                            <p class="sg-pairing-label">--color-white on --color-primary &mdash; 6.4:1</p>
                         </div>
-                        <div class="sg-color-swatch">
-                            <div class="sg-color-block" style="background-color: #E0F2F1;"></div>
-                            <div class="sg-color-info">
-                                <div class="sg-color-name">Teal</div>
-                                <div class="sg-color-value">#E0F2F1 / #00695C</div>
-                                <span class="sg-color-var">--color-badge-teal</span>
-                            </div>
+                        <div class="sg-pairing-sample" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-darker) 100%); color: var(--color-white);">
+                            <p style="margin: 0; font-weight: var(--font-weight-medium);">White on gradient</p>
+                            <p class="sg-pairing-label">--color-white on primary gradient &mdash; 6.4:1+</p>
                         </div>
+                        <div class="sg-pairing-sample" style="background-color: var(--color-gray-50); color: var(--color-gray-900);">
+                            <p style="margin: 0; font-weight: var(--font-weight-medium);">Body text on gray-50</p>
+                            <p class="sg-pairing-label" style="color: var(--color-gray-500);">--color-gray-900 on --color-gray-50 &mdash; 11.4:1</p>
+                        </div>
+                        <div class="sg-pairing-sample" style="background-color: var(--color-gray-100); color: var(--color-gray-700);">
+                            <p style="margin: 0; font-weight: var(--font-weight-medium);">Footer text on gray-100</p>
+                            <p class="sg-pairing-label" style="color: var(--color-gray-500);">--color-gray-700 on --color-gray-100 &mdash; 5.4:1</p>
+                        </div>
+                    </div>
+                    <div class="sg-avoid-note" style="margin-top: var(--space-xl);">
+                        <strong>Avoid:</strong> Do not pair <code>--color-gray-500</code> with <code>--color-white</code> for body text (3.2:1 — fails AA). Use <code>--color-gray-700</code> or darker for readable text.
                     </div>
                 </div>
             </section>
 
             <!-- ============================================================
-                 TYPOGRAPHY
+                 STYLES — TYPOGRAPHY
                  ============================================================ -->
             <section id="typography" class="sg-section">
                 <h2 class="sg-section-title">Typography</h2>
@@ -634,12 +724,15 @@
                 <div class="sg-subsection">
                     <h3 class="sg-subsection-title">Font Families</h3>
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">Archivo — Headings &amp; UI</p>
+                        <p class="sg-type-meta">--font-heading &mdash; Archivo — Headings &amp; UI</p>
                         <p style="font-family: var(--font-heading); font-size: var(--font-size-xl);">The quick brown fox jumps over the lazy dog</p>
                     </div>
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">Inter — Body Text</p>
+                        <p class="sg-type-meta">--font-body &mdash; Inter — Body Text</p>
                         <p style="font-family: var(--font-body); font-size: var(--font-size-xl);">The quick brown fox jumps over the lazy dog</p>
+                    </div>
+                    <div class="sg-avoid-note">
+                        <strong>Avoid:</strong> Do not use Archivo for body paragraphs or Inter for headings. Each family is optimised for its role.
                     </div>
                 </div>
 
@@ -648,32 +741,32 @@
                     <h3 class="sg-subsection-title">Headings</h3>
 
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">H1 Heading — 38px / Bold / Archivo (32px on mobile)</p>
+                        <p class="sg-type-meta">H1 — --font-size-3xl / --font-weight-bold / --line-height-tight / Archivo (32px on mobile)</p>
                         <h1>The quick brown fox jumps over the lazy dog</h1>
                     </div>
 
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">H2 Heading — 32px / Bold / Archivo</p>
+                        <p class="sg-type-meta">H2 — --font-size-2xl / --font-weight-bold / --line-height-tight / Archivo</p>
                         <h2>The quick brown fox jumps over the lazy dog</h2>
                     </div>
 
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">H3 Heading — 24px / Bold / Archivo</p>
+                        <p class="sg-type-meta">H3 — --font-size-xl / --font-weight-bold / --line-height-snug / Archivo</p>
                         <h3>The quick brown fox jumps over the lazy dog</h3>
                     </div>
 
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">H4 Heading — 18px / Semi-bold / Archivo</p>
+                        <p class="sg-type-meta">H4 — --font-size-md / --font-weight-semibold / --line-height-snug / Archivo</p>
                         <h4>The quick brown fox jumps over the lazy dog</h4>
                     </div>
 
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">H5 Heading — 14px / Semi-bold / Archivo</p>
+                        <p class="sg-type-meta">H5 — --font-size-sm / --font-weight-semibold / --line-height-normal / Archivo</p>
                         <h5>The quick brown fox jumps over the lazy dog</h5>
                     </div>
 
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">H6 Heading — 12px / Semi-bold / Archivo</p>
+                        <p class="sg-type-meta">H6 — --font-size-xs / --font-weight-semibold / --line-height-normal / Archivo</p>
                         <h6>The quick brown fox jumps over the lazy dog</h6>
                     </div>
                 </div>
@@ -683,22 +776,22 @@
                     <h3 class="sg-subsection-title">Body Text</h3>
 
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">Body Large — 20px / Regular / Inter</p>
+                        <p class="sg-type-meta">Body Large — --font-size-lg (20px) / --font-weight-normal / Inter</p>
                         <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum lacus a feugiat viverra. Lorem ipsum dolor sit amet.</p>
                     </div>
 
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">Body — 16px / Regular / Inter</p>
+                        <p class="sg-type-meta">Body — --font-size-base (16px) / --font-weight-normal / Inter</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum lacus a feugiat viverra. Lorem ipsum dolor sit amet.</p>
                     </div>
 
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">Small — 14px / Regular / Inter</p>
+                        <p class="sg-type-meta">Small — --font-size-sm (14px) / --font-weight-normal / Inter</p>
                         <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum lacus a feugiat viverra. Lorem ipsum dolor sit amet.</p>
                     </div>
 
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">Tiny — 12px / Regular / Inter</p>
+                        <p class="sg-type-meta">Tiny — --font-size-xs (12px) / --font-weight-normal / Inter</p>
                         <p class="text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum lacus a feugiat viverra. Lorem ipsum dolor sit amet.</p>
                     </div>
                 </div>
@@ -708,23 +801,23 @@
                     <h3 class="sg-subsection-title">Font Weights</h3>
 
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">Light — 300</p>
+                        <p class="sg-type-meta">--font-weight-light — 300</p>
                         <p class="font-light text-lg">The quick brown fox jumps over the lazy dog</p>
                     </div>
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">Normal — 400</p>
+                        <p class="sg-type-meta">--font-weight-normal — 400</p>
                         <p class="font-normal text-lg">The quick brown fox jumps over the lazy dog</p>
                     </div>
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">Medium — 500</p>
+                        <p class="sg-type-meta">--font-weight-medium — 500</p>
                         <p class="font-medium text-lg">The quick brown fox jumps over the lazy dog</p>
                     </div>
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">Semi-bold — 600</p>
+                        <p class="sg-type-meta">--font-weight-semibold — 600</p>
                         <p class="font-semibold text-lg">The quick brown fox jumps over the lazy dog</p>
                     </div>
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">Bold — 700</p>
+                        <p class="sg-type-meta">--font-weight-bold — 700</p>
                         <p class="font-bold text-lg">The quick brown fox jumps over the lazy dog</p>
                     </div>
                 </div>
@@ -774,217 +867,12 @@
             </section>
 
             <!-- ============================================================
-                 COMPONENTS — BUTTONS
-                 ============================================================ -->
-            <section id="buttons" class="sg-section">
-                <h2 class="sg-section-title">Buttons</h2>
-
-                <!-- Button Variants -->
-                <div class="sg-subsection">
-                    <h3 class="sg-subsection-title">Variants</h3>
-                    <div class="sg-component-row">
-                        <button class="btn btn-primary">Primary</button>
-                        <button class="btn btn-secondary">Secondary</button>
-                        <button class="btn btn-outline">Outline</button>
-                    </div>
-                </div>
-
-                <!-- Button Sizes -->
-                <div class="sg-subsection">
-                    <h3 class="sg-subsection-title">Sizes</h3>
-                    <div class="sg-component-row">
-                        <button class="btn btn-primary btn-sm">Small</button>
-                        <button class="btn btn-primary">Default</button>
-                        <button class="btn btn-primary btn-lg">Large</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ============================================================
-                 COMPONENTS — BADGES
-                 ============================================================ -->
-            <section id="badges" class="sg-section">
-                <h2 class="sg-section-title">Badges <span class="badge badge-gray">Available for future use</span></h2>
-
-                <div class="sg-component-row">
-                    <span class="badge badge-blue">Marketing</span>
-                    <span class="badge badge-purple">Design</span>
-                    <span class="badge badge-orange">Part Time</span>
-                    <span class="badge badge-teal">Technology</span>
-                    <span class="badge badge-primary">Featured</span>
-                    <span class="badge badge-gray">Inactive</span>
-                </div>
-            </section>
-
-            <!-- ============================================================
-                 COMPONENTS — CARDS
-                 ============================================================ -->
-            <section id="cards" class="sg-section">
-                <h2 class="sg-section-title">Cards</h2>
-
-                <div class="sg-card-grid">
-                    <div class="card">
-                        <p class="sg-label">Basic Card</p>
-                        <h3>Card Title</h3>
-                        <p>Default card with border and padding. Uses <code>--radius-xl</code> corners and <code>--color-gray-200</code> border.</p>
-                    </div>
-                    <div class="card card-hover">
-                        <p class="sg-label">Hover Card</p>
-                        <h3>Interactive Card</h3>
-                        <p>Lifts on hover with increased shadow. Add <code>.card-hover</code> for the interactive effect.</p>
-                    </div>
-                    <div class="card card-no-border">
-                        <p class="sg-label">Shadow Card</p>
-                        <h3>No Border</h3>
-                        <p>No border, elevated with shadow. Add <code>.card-no-border</code> for this treatment.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ============================================================
-                 COMPONENTS — FORMS
-                 ============================================================ -->
-            <section id="forms" class="sg-section">
-                <h2 class="sg-section-title">Forms <span class="badge badge-gray">Available for future use</span></h2>
-
-                <div class="sg-form-grid">
-                    <div class="form-group">
-                        <label class="form-label">Text Input</label>
-                        <input type="text" class="form-input" placeholder="Enter text...">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Email Input</label>
-                        <input type="email" class="form-input" placeholder="you@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Select</label>
-                        <select class="form-select">
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Textarea</label>
-                        <textarea class="form-textarea" rows="4" placeholder="Enter message..."></textarea>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ============================================================
-                 COMPONENTS — BLOCKQUOTES
-                 ============================================================ -->
-            <section id="blockquotes" class="sg-section">
-                <h2 class="sg-section-title">Blockquotes</h2>
-
-                <div class="sg-subsection">
-                    <h3 class="sg-subsection-title">Testimonial Quote</h3>
-                    <p class="sg-type-meta">.testimonial-quote — border-left accent, tight letter-spacing</p>
-                    <div style="max-width: 480px;">
-                        <blockquote class="testimonial-quote">This is an example blockquote with a left border accent, used for testimonial quotes throughout the site.</blockquote>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ============================================================
-                 COMPONENTS — ACCORDION
-                 ============================================================ -->
-            <section id="accordion" class="sg-section">
-                <h2 class="sg-section-title">Accordion</h2>
-
-                <div class="sg-subsection">
-                    <h3 class="sg-subsection-title">Collapsible Section</h3>
-                    <p class="sg-type-meta">.credibility-subsection — button with aria-expanded, toggle icon rotates on open</p>
-                    <div style="max-width: 600px;">
-                        <div class="credibility-subsection">
-                            <button class="credibility-subsection-title" aria-expanded="false">
-                                <span>Example accordion section</span>
-                                <svg class="credibility-toggle-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <div class="credibility-subsection-content">
-                                <p>Hidden content revealed when the accordion is expanded. Uses <code>aria-expanded</code> for accessibility.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ============================================================
-                 COMPONENTS — SKIP LINK
-                 ============================================================ -->
-            <section id="skip-link" class="sg-section">
-                <h2 class="sg-section-title">Skip Link</h2>
-
-                <div class="sg-subsection">
-                    <p class="sg-type-meta">.skip-link — hidden until focused via Tab key, jumps to main content</p>
-                    <p>The skip link is visually hidden off-screen and appears when a keyboard user presses Tab. It links to <code>#main</code> on every page. Try pressing <strong>Tab</strong> at the top of any page to see it.</p>
-                </div>
-            </section>
-
-            <!-- ============================================================
-                 COMPONENTS — BACK LINK
-                 ============================================================ -->
-            <section id="back-link" class="sg-section">
-                <h2 class="sg-section-title">Back Link</h2>
-
-                <div class="sg-subsection">
-                    <p class="sg-type-meta">.back-link — inline-flex with arrow icon, used on secondary pages</p>
-                    <a href="#" class="back-link" onclick="event.preventDefault();">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="m15 18-6-6 6-6"/>
-                        </svg>
-                        Back to home
-                    </a>
-                </div>
-            </section>
-
-            <!-- ============================================================
-                 COMPONENTS — FOOTER
-                 ============================================================ -->
-            <section id="footer" class="sg-section">
-                <h2 class="sg-section-title">Footer</h2>
-
-                <div class="sg-subsection">
-                    <p class="sg-type-meta">.footer — links left, copyright right, current page as non-interactive span</p>
-                    <div style="background-color: var(--color-gray-100); border-top: 1px solid var(--color-gray-200); padding: var(--space-2xl); border-radius: var(--radius-lg);">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div style="display: flex; gap: var(--space-2xl);">
-                                <a href="#" class="footer-link" onclick="event.preventDefault();">Home</a>
-                                <span class="footer-link footer-link-current" aria-current="page">Style guide</span>
-                                <a href="#" class="footer-link" onclick="event.preventDefault();">Privacy</a>
-                            </div>
-                            <span style="color: var(--color-gray-500); font-size: var(--font-size-sm);">Website design and content &copy; 2026 Adam Atteia.</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ============================================================
-                 COMPONENTS — CONTACT LINK
-                 ============================================================ -->
-            <section id="contact-link" class="sg-section">
-                <h2 class="sg-section-title">Contact Link</h2>
-
-                <div class="sg-subsection">
-                    <p class="sg-type-meta">.contact-link — white text on gradient, icon + label, hover lift</p>
-                    <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-darker) 100%); padding: var(--space-3xl); border-radius: var(--radius-lg); display: flex; flex-direction: column; gap: var(--space-lg); align-items: center;">
-                        <a href="#" class="contact-link" onclick="event.preventDefault();">
-                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                            Email
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ============================================================
-                 SHADOWS
+                 STYLES — SHADOWS
                  ============================================================ -->
             <section id="shadows" class="sg-section">
                 <h2 class="sg-section-title">Shadows</h2>
+
+                <p class="sg-usage-note">Use <code>xs</code>&ndash;<code>sm</code> for subtle UI depth (nav bar, cards at rest). Use <code>lg</code>&ndash;<code>xl</code> for hover states and elevated elements. Use <code>2xl</code> sparingly for modals or popovers.</p>
 
                 <div class="sg-shadow-grid">
                     <div class="sg-shadow-box" style="box-shadow: var(--shadow-xs);">xs</div>
@@ -997,7 +885,7 @@
             </section>
 
             <!-- ============================================================
-                 BORDER RADIUS
+                 STYLES — BORDER RADIUS
                  ============================================================ -->
             <section id="radius" class="sg-section">
                 <h2 class="sg-section-title">Border Radius</h2>
@@ -1031,10 +919,12 @@
             </section>
 
             <!-- ============================================================
-                 SPACING
+                 STYLES — SPACING
                  ============================================================ -->
             <section id="spacing" class="sg-section">
                 <h2 class="sg-section-title">Spacing</h2>
+
+                <p class="sg-usage-note">Use <code>2xs</code>&ndash;<code>sm</code> for tight internal padding (inside buttons, inputs). Use <code>md</code>&ndash;<code>xl</code> for element margins and card padding. Use <code>2xl</code>&ndash;<code>4xl</code> for gaps between groups and section sub-elements. Use <code>5xl</code>&ndash;<code>8xl</code> for section vertical padding only.</p>
 
                 <div class="sg-spacing-list">
                     <div class="sg-spacing-item">
@@ -1093,10 +983,12 @@
             </section>
 
             <!-- ============================================================
-                 LINE HEIGHT
+                 STYLES — LINE HEIGHT
                  ============================================================ -->
             <section id="line-height" class="sg-section">
                 <h2 class="sg-section-title">Line Height</h2>
+
+                <p class="sg-usage-note">Use <code>tighter</code>&ndash;<code>tight</code> for large display headings. Use <code>snug</code> for smaller headings (H3, H4). Use <code>normal</code> for body text, buttons, and form inputs. Use <code>relaxed</code> for long-form descriptions and paragraph-heavy sections.</p>
 
                 <div class="sg-type-sample">
                     <p class="sg-type-meta">--line-height-tighter — 1.1</p>
@@ -1125,10 +1017,12 @@
             </section>
 
             <!-- ============================================================
-                 LETTER SPACING
+                 STYLES — LETTER SPACING
                  ============================================================ -->
             <section id="letter-spacing" class="sg-section">
                 <h2 class="sg-section-title">Letter Spacing</h2>
+
+                <p class="sg-usage-note">Use <code>tight</code> for large display text and testimonial quotes. Use <code>normal</code> as the default. Use <code>wide</code> for uppercase subsection labels and sidebar headings. Use <code>wider</code> for the sidebar group headings.</p>
 
                 <div class="sg-type-sample">
                     <p class="sg-type-meta">--letter-spacing-tight — -0.02em</p>
@@ -1149,10 +1043,12 @@
             </section>
 
             <!-- ============================================================
-                 TRANSITIONS
+                 STYLES — TRANSITIONS
                  ============================================================ -->
             <section id="transitions" class="sg-section">
                 <h2 class="sg-section-title">Transitions</h2>
+
+                <p class="sg-usage-note">Use <code>fast</code> for micro-interactions (icon rotations, toggle states). Use <code>base</code> as the default for hover states on links, buttons, and nav items. Use <code>slow</code> for card hover lifts and larger visual changes. Use <code>all</code> as a shorthand when transitioning multiple properties at once (e.g. buttons).</p>
 
                 <div class="sg-spacing-list">
                     <div class="sg-spacing-item">
@@ -1176,7 +1072,50 @@
             </section>
 
             <!-- ============================================================
-                 CONTAINERS
+                 STYLES — BREAKPOINTS
+                 ============================================================ -->
+            <section id="breakpoints" class="sg-section">
+                <h2 class="sg-section-title">Breakpoints</h2>
+
+                <p class="sg-usage-note">The design system uses a mobile-first approach with <code>max-width</code> media queries. Token values (font sizes, container padding, section spacing) are redefined at each breakpoint in <code>:root</code>. Component-level layout changes (grid columns, nav visibility) are handled in <code>components.css</code>.</p>
+
+                <div class="sg-spacing-list">
+                    <div class="sg-spacing-item">
+                        <span class="sg-spacing-label">Tablet — max-width: 991px</span>
+                        <span class="sg-type-meta" style="margin-bottom: 0;">Font sizes reduce, section padding shrinks, 3-col grids become 2-col</span>
+                    </div>
+                    <div class="sg-spacing-item">
+                        <span class="sg-spacing-label">Mobile — max-width: 767px</span>
+                        <span class="sg-type-meta" style="margin-bottom: 0;">Desktop nav hides, mobile menu appears, grids stack to 1-col, H1 reduces to 32px</span>
+                    </div>
+                    <div class="sg-spacing-item">
+                        <span class="sg-spacing-label">Small mobile — max-width: 479px</span>
+                        <span class="sg-type-meta" style="margin-bottom: 0;">Buttons go full-width, client logos stack to 1-col</span>
+                    </div>
+                </div>
+
+                <div class="sg-subsection" style="margin-top: var(--space-3xl);">
+                    <h3 class="sg-subsection-title">Token Overrides by Breakpoint</h3>
+                    <p class="sg-type-meta">design-system.css — :root values rewritten at each breakpoint</p>
+                    <div class="sg-spacing-list">
+                        <div class="sg-spacing-item">
+                            <span class="sg-spacing-label">991px</span>
+                            <span class="sg-type-meta" style="margin-bottom: 0;">--font-size-3xl: 32px, --font-size-4xl: 40px, .section padding: --space-6xl</span>
+                        </div>
+                        <div class="sg-spacing-item">
+                            <span class="sg-spacing-label">767px</span>
+                            <span class="sg-type-meta" style="margin-bottom: 0;">--font-size-3xl: 28px, --font-size-4xl: 36px, --container-padding: --space-md, .section padding: --space-5xl</span>
+                        </div>
+                        <div class="sg-spacing-item">
+                            <span class="sg-spacing-label">479px</span>
+                            <span class="sg-type-meta" style="margin-bottom: 0;">.btn: width 100%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 STYLES — CONTAINERS
                  ============================================================ -->
             <section id="containers" class="sg-section">
                 <h2 class="sg-section-title">Containers</h2>
@@ -1184,7 +1123,7 @@
                 <div class="sg-subsection">
                     <h3 class="sg-subsection-title">Container Widths</h3>
                     <div class="sg-type-sample">
-                        <p class="sg-type-meta">.container — max-width: 1200px</p>
+                        <p class="sg-type-meta">.container — max-width: 1200px (--container-max-width)</p>
                         <div style="max-width: 1200px; height: 32px; background-color: var(--color-primary-light); border: 1px solid var(--color-primary); border-radius: var(--radius-sm);"></div>
                     </div>
                     <div class="sg-type-sample">
@@ -1214,6 +1153,251 @@
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — NAVIGATION
+                 ============================================================ -->
+            <section id="navigation" class="sg-section">
+                <h2 class="sg-section-title">Navigation</h2>
+
+                <div class="sg-subsection">
+                    <h3 class="sg-subsection-title">Desktop Navigation</h3>
+                    <p class="sg-type-meta">.nav — sticky, white background, bottom border, shadow on scroll via .nav-scrolled</p>
+                    <div style="background-color: var(--color-white); border: 1px solid var(--color-gray-200); border-radius: var(--radius-lg); overflow: hidden;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding: var(--space-lg) var(--space-xl);">
+                            <span style="font-family: var(--font-heading); font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); color: var(--color-black);">Adam Atteia</span>
+                            <div style="display: flex; gap: var(--space-2xl);">
+                                <span class="nav-link">Reduce risk</span>
+                                <span class="nav-link">Capabilities</span>
+                                <span class="nav-link">Credibility</span>
+                                <span class="nav-link">Testimonials</span>
+                                <span class="nav-link">Clients</span>
+                                <span class="nav-link">Contact</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="sg-used-in"><strong>Used in:</strong> index.html (full nav with menu links), style-guide.html and privacy.html (logo only, no menu).</p>
+                </div>
+
+                <div class="sg-subsection">
+                    <h3 class="sg-subsection-title">Mobile Menu</h3>
+                    <p class="sg-type-meta">.mobile-menu-toggle — hamburger icon, visible below 767px. .mobile-menu — full-screen overlay with vertical link list</p>
+                    <p>On mobile, the desktop <code>.nav-menu</code> is hidden and replaced by a hamburger toggle (<code>.mobile-menu-toggle</code>) that opens a full-screen <code>.mobile-menu</code> overlay. The toggle icon animates to an &times; when active. Links are styled as <code>.mobile-menu-link</code> with bottom borders.</p>
+                    <p class="sg-used-in"><strong>Used in:</strong> index.html only. Secondary pages do not include the mobile menu.</p>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — BUTTONS
+                 ============================================================ -->
+            <section id="buttons" class="sg-section">
+                <h2 class="sg-section-title">Buttons</h2>
+
+                <!-- Button Variants -->
+                <div class="sg-subsection">
+                    <h3 class="sg-subsection-title">Variants</h3>
+                    <div class="sg-component-row">
+                        <button class="btn btn-primary">Primary</button>
+                        <button class="btn btn-secondary">Secondary</button>
+                        <button class="btn btn-outline">Outline</button>
+                    </div>
+                    <div class="sg-avoid-note">
+                        <strong>Avoid:</strong> Do not use multiple primary buttons in the same section. Use secondary or outline for lesser actions.
+                    </div>
+                </div>
+
+                <!-- Button Sizes -->
+                <div class="sg-subsection">
+                    <h3 class="sg-subsection-title">Sizes</h3>
+                    <div class="sg-component-row">
+                        <button class="btn btn-primary btn-sm">Small</button>
+                        <button class="btn btn-primary">Default</button>
+                        <button class="btn btn-primary btn-lg">Large</button>
+                    </div>
+                </div>
+
+                <p class="sg-used-in"><strong>Used in:</strong> Hero CTA uses <code>.btn-primary</code>. Buttons go full-width on small mobile (479px).</p>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — CARDS
+                 ============================================================ -->
+            <section id="cards" class="sg-section">
+                <h2 class="sg-section-title">Cards</h2>
+
+                <div class="sg-card-grid">
+                    <div class="card">
+                        <p class="sg-label">Basic Card</p>
+                        <h3>Card Title</h3>
+                        <p>Default card with border and padding. Uses <code>--radius-xl</code> corners and <code>--color-gray-200</code> border.</p>
+                    </div>
+                    <div class="card card-hover">
+                        <p class="sg-label">Hover Card</p>
+                        <h3>Interactive Card</h3>
+                        <p>Lifts on hover with increased shadow. Add <code>.card-hover</code> for the interactive effect.</p>
+                    </div>
+                    <div class="card card-no-border">
+                        <p class="sg-label">Shadow Card</p>
+                        <h3>No Border</h3>
+                        <p>No border, elevated with shadow. Add <code>.card-no-border</code> for this treatment.</p>
+                    </div>
+                </div>
+
+                <p class="sg-used-in" style="margin-top: var(--space-xl);"><strong>Used in:</strong> Capability cards (<code>.capability-card</code>) extend the base card pattern with hover lift. Testimonial cards (<code>.testimonial-card</code>) use shadow-sm base with shadow-lg on hover.</p>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — FORMS
+                 ============================================================ -->
+            <section id="forms" class="sg-section">
+                <h2 class="sg-section-title">Forms <span class="sg-type-meta" style="display: inline; margin: 0;">— Available for future use</span></h2>
+
+                <div class="sg-form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Text Input</label>
+                        <input type="text" class="form-input" placeholder="Enter text...">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Input</label>
+                        <input type="email" class="form-input" placeholder="you@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Select</label>
+                        <select class="form-select">
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Textarea</label>
+                        <textarea class="form-textarea" rows="4" placeholder="Enter message..."></textarea>
+                    </div>
+                </div>
+
+                <p class="sg-used-in" style="margin-top: var(--space-xl);"><strong>Used in:</strong> Not currently used on any page. Defined in <code>design-system.css</code> for future contact or enquiry forms.</p>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — BLOCKQUOTES
+                 ============================================================ -->
+            <section id="blockquotes" class="sg-section">
+                <h2 class="sg-section-title">Blockquotes</h2>
+
+                <div class="sg-subsection">
+                    <h3 class="sg-subsection-title">Testimonial Quote</h3>
+                    <p class="sg-type-meta">.testimonial-quote — --font-size-xl / --font-weight-medium / --letter-spacing-tight / border-left: 3px --color-primary</p>
+                    <div style="max-width: 480px;">
+                        <blockquote class="testimonial-quote">This is an example blockquote with a left border accent, used for testimonial quotes throughout the site.</blockquote>
+                    </div>
+                </div>
+
+                <p class="sg-used-in"><strong>Used in:</strong> Testimonials section on index.html. Each quote is inside a <code>.testimonial-card</code> with author attribution below.</p>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — ACCORDION
+                 ============================================================ -->
+            <section id="accordion" class="sg-section">
+                <h2 class="sg-section-title">Accordion</h2>
+
+                <div class="sg-subsection">
+                    <h3 class="sg-subsection-title">Collapsible Section</h3>
+                    <p class="sg-type-meta">.credibility-subsection — button with aria-expanded, toggle icon rotates on open</p>
+                    <div style="max-width: 600px;">
+                        <div class="credibility-subsection">
+                            <button class="credibility-subsection-title" aria-expanded="false">
+                                <span>Example accordion section</span>
+                                <svg class="credibility-toggle-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="credibility-subsection-content">
+                                <p>Hidden content revealed when the accordion is expanded. Uses <code>aria-expanded</code> for accessibility.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="sg-used-in"><strong>Used in:</strong> Credibility section on index.html for Security clearances, Qualifications, and Professional development.</p>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — SKIP LINK
+                 ============================================================ -->
+            <section id="skip-link" class="sg-section">
+                <h2 class="sg-section-title">Skip Link</h2>
+
+                <div class="sg-subsection">
+                    <p class="sg-type-meta">.skip-link — hidden until focused via Tab key, jumps to #main</p>
+                    <p>The skip link is visually hidden off-screen and appears when a keyboard user presses Tab. It links to <code>#main</code> on every page. Try pressing <strong>Tab</strong> at the top of any page to see it.</p>
+                </div>
+
+                <p class="sg-used-in"><strong>Used in:</strong> All pages (index.html, style-guide.html, privacy.html). Required for WCAG keyboard navigation compliance.</p>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — BACK LINK
+                 ============================================================ -->
+            <section id="back-link" class="sg-section">
+                <h2 class="sg-section-title">Back Link</h2>
+
+                <div class="sg-subsection">
+                    <p class="sg-type-meta">.back-link — inline-flex / --font-weight-medium / --color-primary / arrow icon</p>
+                    <a href="#" class="back-link" onclick="event.preventDefault();">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="m15 18-6-6 6-6"/>
+                        </svg>
+                        Back to home
+                    </a>
+                </div>
+
+                <p class="sg-used-in"><strong>Used in:</strong> style-guide.html and privacy.html as a wayfinding link back to the homepage.</p>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — FOOTER
+                 ============================================================ -->
+            <section id="footer" class="sg-section">
+                <h2 class="sg-section-title">Footer</h2>
+
+                <div class="sg-subsection">
+                    <p class="sg-type-meta">.footer — --color-gray-100 background / links left, copyright right / current page as non-interactive span</p>
+                    <div style="background-color: var(--color-gray-100); border-top: 1px solid var(--color-gray-200); padding: var(--space-2xl); border-radius: var(--radius-lg);">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="display: flex; gap: var(--space-2xl);">
+                                <a href="#" class="footer-link" onclick="event.preventDefault();">Home</a>
+                                <span class="footer-link footer-link-current" aria-current="page">Style guide</span>
+                                <a href="#" class="footer-link" onclick="event.preventDefault();">Privacy</a>
+                            </div>
+                            <span style="color: var(--color-gray-500); font-size: var(--font-size-sm);">Website design and content &copy; 2026 Adam Atteia.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="sg-used-in"><strong>Used in:</strong> All pages. The current page uses <code>.footer-link-current</code> with <code>aria-current="page"</code> to indicate the active page.</p>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — CONTACT LINK
+                 ============================================================ -->
+            <section id="contact-link" class="sg-section">
+                <h2 class="sg-section-title">Contact Link</h2>
+
+                <div class="sg-subsection">
+                    <p class="sg-type-meta">.contact-link — --color-white text / --color-overlay-white-10 background / --radius-lg / hover lift</p>
+                    <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-darker) 100%); padding: var(--space-3xl); border-radius: var(--radius-lg); display: flex; flex-direction: column; gap: var(--space-lg); align-items: center;">
+                        <a href="#" class="contact-link" onclick="event.preventDefault();">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            Email
+                        </a>
+                    </div>
+                </div>
+
+                <p class="sg-used-in"><strong>Used in:</strong> Contact section on index.html. Displayed on the primary gradient background with email and LinkedIn links.</p>
             </section>
 
                 </div><!-- /.sg-content -->
