@@ -356,6 +356,8 @@
                             <li><a href="#shadows" class="sg-sidebar-link">Shadows</a></li>
                             <li><a href="#radius" class="sg-sidebar-link">Border Radius</a></li>
                             <li><a href="#spacing" class="sg-sidebar-link">Spacing</a></li>
+                            <li><a href="#letter-spacing" class="sg-sidebar-link">Letter Spacing</a></li>
+                            <li><a href="#transitions" class="sg-sidebar-link">Transitions</a></li>
                             <li><a href="#containers" class="sg-sidebar-link">Containers</a></li>
                         </ul>
                     </div>
@@ -366,6 +368,12 @@
                             <li><a href="#badges" class="sg-sidebar-link">Badges</a></li>
                             <li><a href="#cards" class="sg-sidebar-link">Cards</a></li>
                             <li><a href="#forms" class="sg-sidebar-link">Forms</a></li>
+                            <li><a href="#blockquotes" class="sg-sidebar-link">Blockquotes</a></li>
+                            <li><a href="#accordion" class="sg-sidebar-link">Accordion</a></li>
+                            <li><a href="#skip-link" class="sg-sidebar-link">Skip Link</a></li>
+                            <li><a href="#back-link" class="sg-sidebar-link">Back Link</a></li>
+                            <li><a href="#footer" class="sg-sidebar-link">Footer</a></li>
+                            <li><a href="#contact-link" class="sg-sidebar-link">Contact Link</a></li>
                         </ul>
                     </div>
                 </aside>
@@ -713,7 +721,7 @@
                  COMPONENTS — BADGES
                  ============================================================ -->
             <section id="badges" class="sg-section">
-                <h2 class="sg-section-title">Badges</h2>
+                <h2 class="sg-section-title">Badges <span class="badge badge-gray">Available for future use</span></h2>
 
                 <div class="sg-component-row">
                     <span class="badge badge-blue">Marketing</span>
@@ -754,7 +762,7 @@
                  COMPONENTS — FORMS
                  ============================================================ -->
             <section id="forms" class="sg-section">
-                <h2 class="sg-section-title">Forms</h2>
+                <h2 class="sg-section-title">Forms <span class="badge badge-gray">Available for future use</span></h2>
 
                 <div class="sg-form-grid">
                     <div class="form-group">
@@ -776,6 +784,115 @@
                     <div class="form-group">
                         <label class="form-label">Textarea</label>
                         <textarea class="form-textarea" rows="4" placeholder="Enter message..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — BLOCKQUOTES
+                 ============================================================ -->
+            <section id="blockquotes" class="sg-section">
+                <h2 class="sg-section-title">Blockquotes</h2>
+
+                <div class="sg-subsection">
+                    <h3 class="sg-subsection-title">Testimonial Quote</h3>
+                    <p class="sg-type-meta">.testimonial-quote — border-left accent, tight letter-spacing</p>
+                    <div style="max-width: 480px;">
+                        <blockquote class="testimonial-quote">This is an example blockquote with a left border accent, used for testimonial quotes throughout the site.</blockquote>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — ACCORDION
+                 ============================================================ -->
+            <section id="accordion" class="sg-section">
+                <h2 class="sg-section-title">Accordion</h2>
+
+                <div class="sg-subsection">
+                    <h3 class="sg-subsection-title">Collapsible Section</h3>
+                    <p class="sg-type-meta">.credibility-subsection — button with aria-expanded, toggle icon rotates on open</p>
+                    <div style="max-width: 600px;">
+                        <div class="credibility-subsection">
+                            <button class="credibility-subsection-title" aria-expanded="false">
+                                <span>Example accordion section</span>
+                                <svg class="credibility-toggle-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="credibility-subsection-content">
+                                <p>Hidden content revealed when the accordion is expanded. Uses <code>aria-expanded</code> for accessibility.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — SKIP LINK
+                 ============================================================ -->
+            <section id="skip-link" class="sg-section">
+                <h2 class="sg-section-title">Skip Link</h2>
+
+                <div class="sg-subsection">
+                    <p class="sg-type-meta">.skip-link — hidden until focused via Tab key, jumps to main content</p>
+                    <p>The skip link is visually hidden off-screen and appears when a keyboard user presses Tab. It links to <code>#main</code> on every page. Try pressing <strong>Tab</strong> at the top of any page to see it.</p>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — BACK LINK
+                 ============================================================ -->
+            <section id="back-link" class="sg-section">
+                <h2 class="sg-section-title">Back Link</h2>
+
+                <div class="sg-subsection">
+                    <p class="sg-type-meta">.back-link — inline-flex with arrow icon, used on secondary pages</p>
+                    <a href="#" class="back-link" onclick="event.preventDefault();">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="m15 18-6-6 6-6"/>
+                        </svg>
+                        Back to home
+                    </a>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — FOOTER
+                 ============================================================ -->
+            <section id="footer" class="sg-section">
+                <h2 class="sg-section-title">Footer</h2>
+
+                <div class="sg-subsection">
+                    <p class="sg-type-meta">.footer — links left, copyright right, current page as non-interactive span</p>
+                    <div style="background-color: var(--color-gray-100); border-top: 1px solid var(--color-gray-200); padding: var(--space-2xl); border-radius: var(--radius-lg);">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="display: flex; gap: var(--space-2xl);">
+                                <a href="#" class="footer-link" onclick="event.preventDefault();">Home</a>
+                                <span class="footer-link footer-link-current" aria-current="page">Style guide</span>
+                                <a href="#" class="footer-link" onclick="event.preventDefault();">Privacy</a>
+                            </div>
+                            <span style="color: var(--color-gray-500); font-size: var(--font-size-sm);">Website design and content &copy; 2026 Adam Atteia.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 COMPONENTS — CONTACT LINK
+                 ============================================================ -->
+            <section id="contact-link" class="sg-section">
+                <h2 class="sg-section-title">Contact Link</h2>
+
+                <div class="sg-subsection">
+                    <p class="sg-type-meta">.contact-link — white text on gradient, icon + label, hover lift</p>
+                    <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-darker) 100%); padding: var(--space-3xl); border-radius: var(--radius-lg); display: flex; flex-direction: column; gap: var(--space-lg); align-items: center;">
+                        <a href="#" class="contact-link" onclick="event.preventDefault();">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            Email
+                        </a>
                     </div>
                 </div>
             </section>
@@ -885,6 +1002,57 @@
                         <span class="sg-spacing-label">--space-8xl — 128px</span>
                         <div class="sg-spacing-bar" style="width: 128px;"></div>
                     </div>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 LETTER SPACING
+                 ============================================================ -->
+            <section id="letter-spacing" class="sg-section">
+                <h2 class="sg-section-title">Letter Spacing</h2>
+
+                <div class="sg-type-sample">
+                    <p class="sg-type-meta">--letter-spacing-tight — -0.02em</p>
+                    <p style="font-size: var(--font-size-xl); letter-spacing: var(--letter-spacing-tight);">The quick brown fox jumps over the lazy dog</p>
+                </div>
+                <div class="sg-type-sample">
+                    <p class="sg-type-meta">--letter-spacing-normal — 0</p>
+                    <p style="font-size: var(--font-size-xl); letter-spacing: var(--letter-spacing-normal);">The quick brown fox jumps over the lazy dog</p>
+                </div>
+                <div class="sg-type-sample">
+                    <p class="sg-type-meta">--letter-spacing-wide — 0.05em</p>
+                    <p style="font-size: var(--font-size-xl); letter-spacing: var(--letter-spacing-wide);">The quick brown fox jumps over the lazy dog</p>
+                </div>
+                <div class="sg-type-sample">
+                    <p class="sg-type-meta">--letter-spacing-wider — 0.08em</p>
+                    <p style="font-size: var(--font-size-xl); letter-spacing: var(--letter-spacing-wider);">The quick brown fox jumps over the lazy dog</p>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 TRANSITIONS
+                 ============================================================ -->
+            <section id="transitions" class="sg-section">
+                <h2 class="sg-section-title">Transitions</h2>
+
+                <div class="sg-spacing-list">
+                    <div class="sg-spacing-item">
+                        <span class="sg-spacing-label">--transition-fast — 0.15s ease</span>
+                    </div>
+                    <div class="sg-spacing-item">
+                        <span class="sg-spacing-label">--transition-base — 0.2s ease</span>
+                    </div>
+                    <div class="sg-spacing-item">
+                        <span class="sg-spacing-label">--transition-slow — 0.3s ease</span>
+                    </div>
+                    <div class="sg-spacing-item">
+                        <span class="sg-spacing-label">--transition-all — all 0.2s ease</span>
+                    </div>
+                </div>
+
+                <div class="sg-subsection" style="margin-top: var(--space-3xl);">
+                    <h3 class="sg-subsection-title">Scroll Animation</h3>
+                    <p>Elements with <code>.card</code>, <code>.capability-card</code>, <code>.testimonial-card</code>, <code>.risk-item</code>, <code>.credibility-item</code>, and <code>.client-logo-wrapper</code> fade in on scroll using <code>IntersectionObserver</code>. Animation: <code>opacity 0→1</code> + <code>translateY(20px→0)</code> over 0.5s with staggered delays. Client logos stagger at 80ms intervals. Respects <code>prefers-reduced-motion</code>.</p>
                 </div>
             </section>
 
