@@ -53,7 +53,7 @@
             font-size: var(--font-size-md);
             color: var(--color-gray-700);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: var(--letter-spacing-wide);
             margin-bottom: var(--space-xl);
         }
 
@@ -61,7 +61,7 @@
             font-size: var(--font-size-xs);
             color: var(--color-gray-500);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: var(--letter-spacing-wide);
             margin-bottom: var(--space-xs);
         }
 
@@ -247,7 +247,7 @@
             font-size: var(--font-size-xs);
             font-weight: var(--font-weight-bold);
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: var(--letter-spacing-wider);
             color: var(--color-gray-500);
             margin-bottom: var(--space-sm);
         }
@@ -356,6 +356,7 @@
                             <li><a href="#shadows" class="sg-sidebar-link">Shadows</a></li>
                             <li><a href="#radius" class="sg-sidebar-link">Border Radius</a></li>
                             <li><a href="#spacing" class="sg-sidebar-link">Spacing</a></li>
+                            <li><a href="#line-height" class="sg-sidebar-link">Line Height</a></li>
                             <li><a href="#letter-spacing" class="sg-sidebar-link">Letter Spacing</a></li>
                             <li><a href="#transitions" class="sg-sidebar-link">Transitions</a></li>
                             <li><a href="#containers" class="sg-sidebar-link">Containers</a></li>
@@ -955,6 +956,10 @@
 
                 <div class="sg-spacing-list">
                     <div class="sg-spacing-item">
+                        <span class="sg-spacing-label">--space-2xs — 4px</span>
+                        <div class="sg-spacing-bar" style="width: 4px;"></div>
+                    </div>
+                    <div class="sg-spacing-item">
                         <span class="sg-spacing-label">--space-xs — 8px</span>
                         <div class="sg-spacing-bar" style="width: 8px;"></div>
                     </div>
@@ -1002,6 +1007,41 @@
                         <span class="sg-spacing-label">--space-8xl — 128px</span>
                         <div class="sg-spacing-bar" style="width: 128px;"></div>
                     </div>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 LETTER SPACING
+                 ============================================================ -->
+            <!-- ============================================================
+                 LINE HEIGHT
+                 ============================================================ -->
+            <section id="line-height" class="sg-section">
+                <h2 class="sg-section-title">Line Height</h2>
+
+                <div class="sg-type-sample">
+                    <p class="sg-type-meta">--line-height-tighter — 1.1</p>
+                    <p style="font-size: var(--font-size-xl); line-height: var(--line-height-tighter);">The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.</p>
+                </div>
+                <div class="sg-type-sample">
+                    <p class="sg-type-meta">--line-height-tight — 1.2</p>
+                    <p style="font-size: var(--font-size-xl); line-height: var(--line-height-tight);">The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.</p>
+                </div>
+                <div class="sg-type-sample">
+                    <p class="sg-type-meta">--line-height-snug — 1.375</p>
+                    <p style="font-size: var(--font-size-xl); line-height: var(--line-height-snug);">The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.</p>
+                </div>
+                <div class="sg-type-sample">
+                    <p class="sg-type-meta">--line-height-normal — 1.5</p>
+                    <p style="font-size: var(--font-size-xl); line-height: var(--line-height-normal);">The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.</p>
+                </div>
+                <div class="sg-type-sample">
+                    <p class="sg-type-meta">--line-height-relaxed — 1.625</p>
+                    <p style="font-size: var(--font-size-xl); line-height: var(--line-height-relaxed);">The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.</p>
+                </div>
+                <div class="sg-type-sample">
+                    <p class="sg-type-meta">--line-height-loose — 2</p>
+                    <p style="font-size: var(--font-size-xl); line-height: var(--line-height-loose);">The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.</p>
                 </div>
             </section>
 

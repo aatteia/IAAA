@@ -45,7 +45,7 @@
 
 .hero-title {
   font-size: var(--font-size-4xl);
-  line-height: 1.1;
+  line-height: var(--line-height-tighter);
   margin-bottom: var(--space-lg);
   color: var(--color-black);
 }
@@ -209,7 +209,7 @@
   height: 8px;
   border-radius: 50%;
   background-color: var(--color-primary);
-  margin-top: 8px;
+  margin-top: var(--space-xs);
 }
 
 .credibility-text {

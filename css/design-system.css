@@ -62,10 +62,9 @@
   --font-size-2xl: 32px;
   --font-size-3xl: 38px;
   --font-size-4xl: 48px;
-  --font-size-5xl: 56px;
-  --font-size-6xl: 64px;
   
   /* Typography - Line Heights */
+  --line-height-tighter: 1.1;
   --line-height-tight: 1.2;
   --line-height-snug: 1.375;
   --line-height-normal: 1.5;
@@ -88,6 +87,7 @@
   
   /* Spacing Scale */
   --space-0: 0;
+  --space-2xs: 4px;
   --space-xs: 8px;
   --space-sm: 12px;
   --space-md: 16px;
@@ -359,7 +359,7 @@ a:focus {
   font-family: var(--font-body);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
-  line-height: 1.5;
+  line-height: var(--line-height-normal);
   text-align: center;
   text-decoration: none;
   border: none;
@@ -451,10 +451,10 @@ a:focus {
 /* Badges */
 .badge {
   display: inline-block;
-  padding: 4px 12px;
+  padding: var(--space-2xs) var(--space-sm);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
-  line-height: 1.5;
+  line-height: var(--line-height-normal);
   border-radius: var(--radius-full);
   white-space: nowrap;
 }
@@ -507,10 +507,10 @@ a:focus {
 .form-select {
   display: block;
   width: 100%;
-  padding: 10px 12px;
+  padding: var(--space-xs) var(--space-sm);
   font-family: var(--font-body);
   font-size: var(--font-size-base);
-  line-height: 1.5;
+  line-height: var(--line-height-normal);
   color: var(--color-gray-900);
   background-color: var(--color-white);
   border: 1px solid var(--color-gray-300);
@@ -595,7 +595,7 @@ a:focus {
 
 .hero-title {
   font-size: var(--font-size-4xl);
-  line-height: 1.1;
+  line-height: var(--line-height-tighter);
   margin-bottom: var(--space-xl);
 }
 
