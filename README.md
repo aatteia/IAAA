@@ -25,7 +25,6 @@ IAAA/
     │   └── constitution.md       # AI agent coding rules
     ├── plans/                    # Saved development plans
     ├── decisions/                # Architecture decision records
-    ├── DESIGN-SYSTEM.md          # Complete design system reference
     └── IMPLEMENTATION.md         # Implementation guide
 ```
 
@@ -61,7 +60,7 @@ The site uses a design system extracted from the HireUp template:
 
 All design tokens are CSS custom properties in `css/design-system.css`.
 
-See `docs/DESIGN-SYSTEM.md` for complete reference.
+See `style-guide.html` for the complete visual reference.
 
 ---
 
@@ -70,7 +69,6 @@ See `docs/DESIGN-SYSTEM.md` for complete reference.
 | Document | Purpose |
 |----------|---------|
 | `docs/ai/constitution.md` | Rules for AI-assisted development |
-| `docs/DESIGN-SYSTEM.md` | Colours, typography, spacing, components |
 | `docs/IMPLEMENTATION.md` | Setup, deployment, troubleshooting |
 | `docs/plans/` | Development plans for features |
 | `docs/decisions/` | Records of significant choices |

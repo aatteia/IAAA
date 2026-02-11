@@ -69,7 +69,6 @@ docs/
   README.md             # Project documentation
   IMPLEMENTATION.md     # Setup and deployment guide
   architecture.md       # Technical decisions & constraints
-  DESIGN-SYSTEM.md      # Design token reference
   ai/
     constitution.md     # AI agent coding rules (READ THIS)
     README.md           # AI context guide
