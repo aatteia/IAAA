@@ -18,6 +18,21 @@
     <link rel="stylesheet" href="css/components.css">
 
     <style>
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: var(--space-xs);
+            text-decoration: none;
+            z-index: 100;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
         /* Style guide page specific styles */
         .sg-page {
             padding: var(--space-5xl) 0;
@@ -344,6 +359,9 @@
 </head>
 <body>
 
+    <!-- Skip Link for Accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
     <nav class="nav">
         <div class="container">
@@ -353,7 +371,7 @@
         </div>
     </nav>
 
-    <main class="sg-page">
+    <main id="main" class="sg-page">
         <div class="container">
 
             <!-- Introduction -->

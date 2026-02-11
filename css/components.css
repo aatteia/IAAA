@@ -314,7 +314,7 @@
 .testimonial-author-name::after {
   content: ' -';
   color: var(--color-gray-700);
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-normal);
 }
 
 .testimonial-author-title {

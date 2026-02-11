@@ -18,6 +18,21 @@
     <link rel="stylesheet" href="css/components.css">
 
     <style>
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: var(--space-xs);
+            text-decoration: none;
+            z-index: 100;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
         /* Privacy page specific styles */
         .privacy-page {
             padding: var(--space-7xl) 0;
@@ -55,6 +70,9 @@
 </head>
 <body>
 
+    <!-- Skip Link for Accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
     <nav class="nav">
         <div class="container">
@@ -64,7 +82,7 @@
         </div>
     </nav>
 
-    <main class="privacy-page">
+    <main id="main" class="privacy-page">
         <div class="container">
             <h1>Privacy</h1>
 
