@@ -18,21 +18,6 @@
     <link rel="stylesheet" href="css/components.css">
 
     <style>
-        /* Skip link for accessibility */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--color-primary);
-            color: var(--color-white);
-            padding: var(--space-xs);
-            text-decoration: none;
-            z-index: 100;
-        }
-        .skip-link:focus {
-            top: 0;
-        }
-
         /* Style guide page specific styles */
         .sg-page {
             padding: var(--space-5xl) 0;
@@ -239,27 +224,6 @@
             gap: var(--space-xl);
         }
 
-        /* Back link */
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-sm);
-            margin-top: var(--space-2xl);
-            font-weight: var(--font-weight-medium);
-            color: var(--color-primary);
-            text-decoration: none;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .back-link:focus-visible {
-            outline: 2px solid var(--color-primary);
-            outline-offset: 4px;
-            border-radius: 2px;
-        }
-
         /* Sidebar navigation */
         .sg-layout {
             display: grid;
@@ -363,7 +327,7 @@
     <a href="#main" class="skip-link">Skip to main content</a>
 
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" id="nav">
         <div class="container">
             <div class="nav-container">
                 <a href="index.html" class="nav-logo">Adam Atteia</a>
@@ -977,6 +941,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 
 </body>
 </html>

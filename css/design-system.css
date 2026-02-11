@@ -43,6 +43,11 @@
   --color-badge-text-orange: #E65100;
   --color-badge-text-teal: #00695C;
   
+  /* Colors - Overlays */
+  --color-overlay-white-10: rgba(255, 255, 255, 0.1);
+  --color-overlay-white-20: rgba(255, 255, 255, 0.2);
+  --color-primary-ring: rgba(70, 64, 222, 0.1);
+
   /* Typography - Font Families */
   --font-heading: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -66,6 +71,12 @@
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.625;
   --line-height-loose: 2;
+
+  /* Typography - Letter Spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+  --letter-spacing-wider: 0.08em;
   
   /* Typography - Font Weights */
   --font-weight-light: 300;
@@ -171,35 +182,35 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: var(--font-size-3xl);
-  line-height: 44px;
+  line-height: var(--line-height-tight); /* ~44px at 38px */
   margin-bottom: var(--space-xl);
 }
 
 h2 {
   font-size: var(--font-size-2xl);
-  line-height: 36px;
+  line-height: var(--line-height-tight); /* ~36px at 32px */
 }
 
 h3 {
   font-size: var(--font-size-xl);
-  line-height: 30px;
+  line-height: var(--line-height-snug); /* ~30px at 24px */
 }
 
 h4 {
   font-size: var(--font-size-md);
-  line-height: 24px;
+  line-height: var(--line-height-snug); /* ~24px at 18px */
   font-weight: var(--font-weight-semibold);
 }
 
 h5 {
   font-size: var(--font-size-sm);
-  line-height: 20px;
+  line-height: var(--line-height-normal); /* ~20px at 14px */
   font-weight: var(--font-weight-semibold);
 }
 
 h6 {
   font-size: var(--font-size-xs);
-  line-height: 18px;
+  line-height: var(--line-height-normal); /* ~18px at 12px */
   font-weight: var(--font-weight-semibold);
 }
 
@@ -344,7 +355,7 @@ a:focus {
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: var(--space-sm) var(--space-xl);
   font-family: var(--font-body);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
@@ -400,12 +411,12 @@ a:focus {
 }
 
 .btn-sm {
-  padding: 8px 16px;
+  padding: var(--space-xs) var(--space-md);
   font-size: var(--font-size-sm);
 }
 
 .btn-lg {
-  padding: 16px 32px;
+  padding: var(--space-md) var(--space-2xl);
   font-size: var(--font-size-md);
 }
 
@@ -512,7 +523,7 @@ a:focus {
 .form-select:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(70, 64, 222, 0.1);
+  box-shadow: 0 0 0 3px var(--color-primary-ring);
 }
 
 .form-textarea {
@@ -627,8 +638,8 @@ a:focus {
   }
   
   h1 {
-    font-size: 32px;
-    line-height: 1.2;
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-tight);
   }
   
   .section {

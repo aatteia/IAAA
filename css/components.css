@@ -291,9 +291,9 @@
 
 .testimonial-quote {
   font-size: var(--font-size-xl);
-  line-height: 1.4;
+  line-height: var(--line-height-snug);
   font-weight: var(--font-weight-medium);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--letter-spacing-tight);
   color: var(--color-gray-900);
   margin: 0 0 var(--space-xl) 0;
   padding-left: var(--space-xl);
@@ -414,14 +414,57 @@
   align-items: center;
   gap: var(--space-md);
   padding: var(--space-lg) var(--space-2xl);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--color-overlay-white-10);
   border-radius: var(--radius-lg);
   transition: var(--transition-base);
 }
 
 .contact-link:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-overlay-white-20);
   transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Skip Link (Accessibility)
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-xs);
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ==========================================================================
+   Back Link
+   ========================================================================== */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-2xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.back-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 /* ==========================================================================
