@@ -77,9 +77,9 @@ All colors are defined as CSS custom properties in `design-system.css`:
 --color-primary: #4640DE          /* Primary purple/blue */
 --color-primary-dark: #443FDE     /* Hover state */
 --color-primary-light: #F3F3FC    /* Light backgrounds */
---color-gray-900: #3E404C         /* Body text */
---color-gray-200: #EBEBEF         /* Borders */
---color-gray-100: #F7F7FA         /* Section backgrounds */
+--color-grey-900: #3E404C         /* Body text */
+--color-grey-200: #EBEBEF         /* Borders */
+--color-grey-100: #F7F7FA         /* Section backgrounds */
 ```
 
 **To customize colors:** Edit these variables in `css/design-system.css`
@@ -167,7 +167,7 @@ Three button styles available:
 <span class="badge badge-orange">Part Time</span>
 <span class="badge badge-teal">Technology</span>
 <span class="badge badge-primary">New</span>
-<span class="badge badge-gray">Inactive</span>
+<span class="badge badge-grey">Inactive</span>
 ```
 
 ### Grids

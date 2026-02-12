@@ -9,31 +9,31 @@
    ========================================================================== */
 
 :root {
-  /* Colors - Primary */
+  /* Colours - Primary */
   --color-primary: #4640DE;
   --color-primary-dark: #443FDE;
   --color-primary-darker: #28257E;
   --color-primary-light: #F3F3FC;
   
-  /* Colors - Neutrals */
+  /* Colours - Neutrals */
   --color-black: #030407;
-  --color-gray-900: #3E404C;
-  --color-gray-700: #6B6B6B;
-  --color-gray-500: #999999;
-  --color-gray-300: #CCCCCC;
-  --color-gray-200: #EBEBEF;
-  --color-gray-100: #F7F7FA;
-  --color-gray-50: #F3F3FC;
+  --color-grey-900: #3E404C;
+  --color-grey-700: #6B6B6B;
+  --color-grey-500: #999999;
+  --color-grey-300: #CCCCCC;
+  --color-grey-200: #EBEBEF;
+  --color-grey-100: #F7F7FA;
+  --color-grey-50: #F3F3FC;
   --color-white: #FFFFFF;
   
-  /* Colors - Semantic */
+  /* Colours - Semantic */
   --color-focus: #3898EC;
   --color-error: #EA384C;
   --color-error-bg: #FFDEDE;
   --color-success: #28A745;
   --color-warning: #FFC107;
   
-  /* Colors - Overlays */
+  /* Colours - Overlays */
   --color-overlay-white-10: rgba(255, 255, 255, 0.1);
   --color-overlay-white-20: rgba(255, 255, 255, 0.2);
   --color-primary-ring: rgba(70, 64, 222, 0.1);
@@ -152,7 +152,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
-  color: var(--color-gray-900);
+  color: var(--color-grey-900);
   background-color: var(--color-white);
 }
 
@@ -243,12 +243,12 @@ a:focus {
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 
-/* Color Utilities */
+/* Colour Utilities */
 .text-primary { color: var(--color-primary); }
 .text-black { color: var(--color-black); }
-.text-gray-900 { color: var(--color-gray-900); }
-.text-gray-700 { color: var(--color-gray-700); }
-.text-gray-500 { color: var(--color-gray-500); }
+.text-grey-900 { color: var(--color-grey-900); }
+.text-grey-700 { color: var(--color-grey-700); }
+.text-grey-500 { color: var(--color-grey-500); }
 .text-white { color: var(--color-white); }
 
 /* ==========================================================================
@@ -390,8 +390,8 @@ a:focus {
 
 .btn-outline {
   background-color: var(--color-white);
-  color: var(--color-gray-900);
-  border: 1px solid var(--color-gray-300);
+  color: var(--color-grey-900);
+  border: 1px solid var(--color-grey-300);
 }
 
 .btn-outline:hover {
@@ -412,7 +412,7 @@ a:focus {
 /* Cards */
 .card {
   background-color: var(--color-white);
-  border: 1px solid var(--color-gray-200);
+  border: 1px solid var(--color-grey-200);
   border-radius: var(--radius-xl);
   padding: var(--space-xl);
   transition: var(--transition-slow);
@@ -425,7 +425,7 @@ a:focus {
 .card-hover:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
-  border-color: var(--color-gray-300);
+  border-color: var(--color-grey-300);
 }
 
 .card-no-border {
@@ -447,7 +447,7 @@ a:focus {
   margin-bottom: var(--space-sm);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  color: var(--color-gray-900);
+  color: var(--color-grey-900);
 }
 
 .form-input,
@@ -459,9 +459,9 @@ a:focus {
   font-family: var(--font-body);
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
-  color: var(--color-gray-900);
+  color: var(--color-grey-900);
   background-color: var(--color-white);
-  border: 1px solid var(--color-gray-300);
+  border: 1px solid var(--color-grey-300);
   border-radius: var(--radius-md);
   transition: var(--transition-base);
 }
@@ -485,7 +485,7 @@ a:focus {
   top: 0;
   z-index: var(--z-sticky);
   background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-grey-200);
   transition: box-shadow var(--transition-base);
 }
 
@@ -521,7 +521,7 @@ a:focus {
 .nav-link {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
-  color: var(--color-gray-900);
+  color: var(--color-grey-900);
   text-decoration: none;
   transition: color var(--transition-base);
 }
@@ -549,7 +549,7 @@ a:focus {
 
 .hero-description {
   font-size: var(--font-size-lg);
-  color: var(--color-gray-700);
+  color: var(--color-grey-700);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;

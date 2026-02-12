@@ -53,7 +53,7 @@ This project uses AI-assisted development with Claude. Before making changes:
 
 The site uses a design system extracted from the HireUp template:
 
-- **Colours:** Primary purple (#4640DE) with full gray scale
+- **Colours:** Primary purple (#4640DE) with full grey scale
 - **Typography:** Archivo (headings) + Inter (body)
 - **Spacing:** 8px-based consistent scale
 - **Components:** Buttons, cards, badges, forms
