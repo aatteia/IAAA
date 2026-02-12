@@ -84,7 +84,49 @@
     }
     
     window.addEventListener('scroll', highlightNavigation);
-    
+
+    // =======================================================================
+    // Style Guide Sidebar Scroll-Spy
+    // =======================================================================
+
+    var sidebarLinks = document.querySelectorAll('.sg-sidebar-link');
+
+    if (sidebarLinks.length > 0) {
+        var sgSections = document.querySelectorAll('.sg-section');
+        var currentSidebarSection = '';
+
+        var sidebarObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var sectionId = entry.target.getAttribute('id');
+
+                    if (sectionId !== currentSidebarSection) {
+                        currentSidebarSection = sectionId;
+
+                        sidebarLinks.forEach(function(link) {
+                            if (link.getAttribute('href') === '#' + sectionId) {
+                                link.classList.add('sg-sidebar-link-active');
+                            } else {
+                                link.classList.remove('sg-sidebar-link-active');
+                            }
+                        });
+
+                        if (history.replaceState) {
+                            history.replaceState(null, null, '#' + sectionId);
+                        }
+                    }
+                }
+            });
+        }, {
+            rootMargin: '-80px 0px -60% 0px',
+            threshold: 0
+        });
+
+        sgSections.forEach(function(section) {
+            sidebarObserver.observe(section);
+        });
+    }
+
     // =======================================================================
     // Smooth Scroll for Anchor Links
     // =======================================================================
@@ -235,7 +277,17 @@
         // Initial check for scroll position
         handleScroll();
         highlightNavigation();
-        
+
+        // Set initial sidebar active state from URL hash
+        if (sidebarLinks.length > 0 && window.location.hash) {
+            var hashLink = document.querySelector(
+                '.sg-sidebar-link[href="' + window.location.hash + '"]'
+            );
+            if (hashLink) {
+                hashLink.classList.add('sg-sidebar-link-active');
+            }
+        }
+
         // Add loaded class to body for any CSS animations
         document.body.classList.add('loaded');
     });
